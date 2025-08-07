@@ -1,63 +1,100 @@
+export const TAGS = [
+  "React",
+  "JavaScript",
+  "Node.js",
+  "Express.js",
+  "Kotlin",
+  "Python",
+  "Jetpack Compose",
+  "Compose",
+  "Firebase",
+  "Zustand",
+  "Tailwind CSS",
+  "Vite",
+  "shadcn/ui",
+  "TanStack Query",
+  "Axios",
+  "Husky",
+  "Biome",
+  "Mongoose",
+  "Zod",
+  "Room",
+  "Retrofit",
+  "NewsData.io",
+  "Coroutines",
+] as const;
+
+export type Tag = (typeof TAGS)[number];
+
 export type Project = {
   name: string;
   description: string;
   url: string;
-  technologies: string[];
+  technologies: Tag[];
 };
 
 export const projects: Project[] = [
   {
-    name: 'react-starter-js',
-    description: 'A starter template for React.js projects.',
-    url: 'https://github.com/zainulhassan815/react-starter-js',
-    technologies: ['React', 'JavaScript'],
+    name: "React Production-Ready Starter",
+    description:
+      "A robust, feature-rich starter template for building modern React applications. Includes Vite, shadcn/ui, Tailwind CSS, TanStack Query, Axios, Husky, Biome, and more.",
+    url: "https://github.com/zainulhassan815/react-starter-js",
+    technologies: ["React", "JavaScript"],
   },
   {
-    name: 'express-starter',
-    description: 'A production-ready starter template for Express.js applications.',
-    url: 'https://github.com/zainulhassan815/express-starter',
-    technologies: ['Node.js', 'Express.js'],
+    name: "Express Starter JS",
+    description:
+      "A robust and production-ready starter template for building RESTful APIs with Express.js. Features logging, Swagger docs, security, CORS, Mongoose, Zod validation, Husky, Biome, and more.",
+    url: "https://github.com/zainulhassan815/express-starter",
+    technologies: ["Node.js", "Express.js"],
   },
   {
-    name: 'formz-kotlin',
-    description: 'A library for simplified form representation and validation in Kotlin.',
-    url: 'https://github.com/zainulhassan815/formz-kotlin',
-    technologies: ['Kotlin'],
+    name: "Formz-Kotlin",
+    description:
+      "A Kotlin Multiplatform library for structured, reusable form state management and validation. Inspired by Dart Formz, supports Android, iOS, and more.",
+    url: "https://github.com/zainulhassan815/formz-kotlin",
+    technologies: ["Kotlin"],
   },
   {
-    name: 'playstore-image-scraper',
-    description: 'A Python tool to scrape featured app images from the Play Store.',
-    url: 'https://github.com/zainulhassan815/playstore-image-scraper',
-    technologies: ['Python'],
+    name: "Play Store Scraper",
+    description:
+      "A Python script that scrapes app images from the Google Play Store based on a search query. Downloads screenshots and organizes them into folders.",
+    url: "https://github.com/zainulhassan815/playstore-image-scraper",
+    technologies: ["Python"],
   },
   {
-    name: 'mls-bot',
-    description: 'A bot for MLS.',
-    url: 'https://github.com/zainulhassan815/mls-bot',
-    technologies: ['Python'],
+    name: "Bright MLS Scraper Bot",
+    description:
+      "A headless browser bot that logs into Bright MLS, scrapes property listings (price, beds, agent email, etc.), and sends the data to a Podio webhook via a Flask API.",
+    url: "https://github.com/zainulhassan815/mls-bot",
+    technologies: ["Python"],
   },
   {
-    name: 'tmdb-movie-explorer',
-    description: 'A movie explorer for TMDB.',
-    url: 'https://github.com/zainulhassan815/tmdb-movie-explorer',
-    technologies: ['React', 'JavaScript'],
+    name: "TMDB Movie Explorer",
+    description:
+      "A modern, production-ready React app for exploring movies using The Movie Database (TMDB) API. Features search, details, authentication, shadcn/ui, Tailwind CSS, TanStack Query, Zustand, and more.",
+    url: "https://github.com/zainulhassan815/tmdb-movie-explorer",
+    technologies: ["React", "JavaScript"],
   },
   {
-    name: 'newslayer',
-    description: 'A personalized news feed application built with Kotlin.',
-    url: 'https://github.com/zainulhassan815/newslayer',
-    technologies: ['Kotlin'],
+    name: "NewsLayer",
+    description:
+      "Get a personalized news feed with the stories you care about. Android app built with Kotlin, Jetpack Compose, Retrofit, Room, Hilt, and NewsData.io API.",
+    url: "https://github.com/zainulhassan815/newslayer",
+    technologies: ["Kotlin"],
   },
   {
-    name: 'currency-converter',
-    description: 'A currency converter app developed with Kotlin, Compose, and Firebase.',
-    url: 'https://github.com/zainulhassan815/currency-converter',
-    technologies: ['Kotlin', 'Compose', 'Firebase'],
+    name: "Currency Converter",
+    description:
+      "A simple Android app developed with Kotlin and Compose UI to convert to multiple currencies at once. Uses Firebase Database and Cloud Functions.",
+    url: "https://github.com/zainulhassan815/currency-converter",
+    technologies: ["Kotlin", "Firebase", "Compose"],
   },
   {
-    name: 'pocketmovies',
-    description: 'A movie app.',
-    url: 'https://github.com/zainulhassan815/pocketmovies',
-    technologies: ['React Native'],
+    name: "PocketMovies",
+    description:
+      "Explore movies from the YTS API. Android app written in Kotlin with Jetpack Compose, Coroutines, Hilt, and modern architecture components.",
+    url: "https://github.com/zainulhassan815/pocketmovies",
+    technologies: ["Kotlin", "Jetpack Compose"],
   },
 ];

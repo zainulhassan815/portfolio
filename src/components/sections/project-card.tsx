@@ -1,9 +1,11 @@
-import { FC } from 'react';
-import { Project } from '@/lib/projects';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import GitHub from '@/assets/icons/github';
+import { FC } from "react";
+import { Project } from "@/lib/projects";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import GitHub from "@/assets/icons/github";
+import Typography from "@/components/ui/typography";
+import { Badge } from "@/components/ui/badge";
 
 interface ProjectCardProps {
   project: Project;
@@ -11,23 +13,20 @@ interface ProjectCardProps {
 
 const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   return (
-    <Card className="flex flex-col overflow-hidden">
+    <Card className="flex flex-col gap-4 overflow-hidden pt-0 pb-6">
       <div className="relative h-48 w-full">
         <Image src="/project-placeholder.png" alt={project.name} layout="fill" objectFit="cover" />
       </div>
       <CardHeader>
-        <CardTitle>{project.name}</CardTitle>
+        <Typography variant="h3">{project.name}</Typography>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-muted-foreground">{project.description}</p>
-        <div className="mt-4 flex flex-wrap">
+        <Typography className="line-clamp-5">{project.description}</Typography>
+        <div className="mt-2 flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="bg-secondary text-secondary-foreground mr-2 mb-2 rounded-full px-2.5 py-0.5 text-xs font-medium"
-            >
-              {tech}
-            </span>
+            <Badge key={tech} variant="outline">
+              <Typography variant="muted">{tech}</Typography>
+            </Badge>
           ))}
         </div>
       </CardContent>
