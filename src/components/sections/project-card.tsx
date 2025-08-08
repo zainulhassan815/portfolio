@@ -3,8 +3,8 @@ import { Project } from "@/lib/projects";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import GitHub from "@/assets/icons/github";
-import Typography from "@/components/ui/typography";
+import { GitHub } from "@/assets/icons";
+import { Typography } from "@/components/ui/typography";
 import { Badge } from "@/components/ui/badge";
 
 interface ProjectCardProps {
@@ -15,7 +15,13 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   return (
     <Card className="flex flex-col gap-2 overflow-hidden pt-0 pb-6">
       <div className="relative h-48 w-full">
-        <Image src={project.image} alt={project.name} layout="fill" objectFit="cover" />
+        <Image
+          src={project.image}
+          alt={project.name}
+          fill
+          sizes="(max-width: 320px) 100vw"
+          className="object-cover object-center"
+        />
       </div>
       <CardHeader>
         <Typography variant="h3">{project.name}</Typography>

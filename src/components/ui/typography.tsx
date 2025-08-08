@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
-export const typographyVariants = cva("text-foreground", {
+const typographyVariants = cva("text-foreground", {
   variants: {
     variant: {
       h1: "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
@@ -67,4 +67,4 @@ const Typography = forwardRef<HTMLElement, TypographyProps>(
 
 Typography.displayName = "Typography";
 
-export default Typography;
+export { Typography, typographyVariants };

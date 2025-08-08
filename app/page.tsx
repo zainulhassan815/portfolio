@@ -1,5 +1,9 @@
-import Projects from "@/components/sections/projects";
-import Typography from "@/components/ui/typography";
+import { Projects } from "@/components/sections/projects";
+import { Testimonials } from "@/components/sections/testimonials";
+import { Contact } from "@/components/sections/contact";
+import { Blogs } from "@/components/sections/blogs";
+
+import { Typography } from "@/components/ui/typography";
 
 export default function Home() {
   return (
@@ -13,6 +17,9 @@ export default function Home() {
         </Typography>
       </div>
       <Projects />
+      <Testimonials />
+      <Blogs />
+      <Contact />
     </main>
   );
 }
