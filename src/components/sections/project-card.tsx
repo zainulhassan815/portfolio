@@ -13,9 +13,9 @@ interface ProjectCardProps {
 
 const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   return (
-    <Card className="flex flex-col gap-4 overflow-hidden pt-0 pb-6">
+    <Card className="flex flex-col gap-2 overflow-hidden pt-0 pb-6">
       <div className="relative h-48 w-full">
-        <Image src="/project-placeholder.png" alt={project.name} layout="fill" objectFit="cover" />
+        <Image src={project.image} alt={project.name} layout="fill" objectFit="cover" />
       </div>
       <CardHeader>
         <Typography variant="h3">{project.name}</Typography>

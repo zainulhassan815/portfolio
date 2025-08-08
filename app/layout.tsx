@@ -27,7 +27,7 @@ export default function RootLayout({
       <body
         className={`${outfitSans.variable} ${jetbrainsMono.variable} bg-background text-foreground antialiased`}
       >
-        <div className="relative container mx-auto min-h-screen max-w-screen-xl p-4 antialiased md:p-8">
+        <div className="relative container mx-auto min-h-screen max-w-screen-xl p-4 md:p-8">
           {children}
         </div>
       </body>
