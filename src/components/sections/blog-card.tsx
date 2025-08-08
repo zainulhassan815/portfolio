@@ -30,7 +30,7 @@ export const BlogCard = ({ title, description, tags, url }: Blog) => {
         </div>
       </CardContent>
       <CardFooter>
-        <Button asChild variant="secondary">
+        <Button asChild variant="outline">
           <a href={url} target="_blank" rel="noopener noreferrer">
             Read Full Article
           </a>
