@@ -1,34 +1,39 @@
 const blogs = [
   {
-    "title": "How to Design Better UI/UX as an Indie Developer",
-    "description": "Building a great product is hard, but building one that users love is even harder. Whether it’s a side project or your next million dollar product idea, a clean and intuitive UI/UX is the key to success. As indie developers, we often struggle with this, but it’s not impossible. Here’s how you can plan, design, and draw inspiration to create interfaces that actually work.",
-    "url": "https://zainulhassan815.medium.com/how-to-design-better-ui-ux-as-an-indie-developer-4c150a06bec3",
-    "tags": ["Figma", "UI/UX"]
+    title: "How to Design Better UI/UX as an Indie Developer",
+    description:
+      "Building a great product is hard, but building one that users love is even harder. Whether it’s a side project or your next million dollar product idea, a clean and intuitive UI/UX is the key to success. As indie developers, we often struggle with this, but it’s not impossible. Here’s how you can plan, design, and draw inspiration to create interfaces that actually work.",
+    url: "https://zainulhassan815.medium.com/how-to-design-better-ui-ux-as-an-indie-developer-4c150a06bec3",
+    tags: ["Figma", "UI/UX"],
   },
   {
-    "title": "Functional Error Handling in Kotlin using Arrow Kt",
-    "description": "Functional error handling is a method of managing errors in programming that aligns with the principles of functional programming. Instead of relying on traditional exception handling mechanisms (like try-catch blocks), functional error handling uses types and constructs that explicitly represent the possibility of failure in the type system. This approach makes error handling more predictable, composable, and maintainable.",
-    "url": "https://zainulhassan815.medium.com/functional-error-handling-in-kotlin-using-arrow-kt-7f002f288b82",
-    "tags": ["Kotlin", "Functional Programming", "Arrow", "Android"]
+    title: "Functional Error Handling in Kotlin using Arrow Kt",
+    description:
+      "Functional error handling is a method of managing errors in programming that aligns with the principles of functional programming. Instead of relying on traditional exception handling mechanisms (like try-catch blocks), functional error handling uses types and constructs that explicitly represent the possibility of failure in the type system. This approach makes error handling more predictable, composable, and maintainable.",
+    url: "https://zainulhassan815.medium.com/functional-error-handling-in-kotlin-using-arrow-kt-7f002f288b82",
+    tags: ["Kotlin", "Functional Programming", "Arrow", "Android"],
   },
   {
-    "title": "Formz Kotlin — A Multiplatform Form Validation Library",
-    "description": "Formz-kotlin is a Kotlin implementation of Formz Dart library that simplifies form representation and validation by treating input fields as objects with built-in validation logic. It helps manage form states efficiently and reduces boilerplate code.",
-    "url": "https://zainulhassan815.medium.com/formz-kotlin-a-multiplatform-form-validation-library-3af42d4f58e9",
-    "tags": ["Kotlin Multiplatform", "Jetpack Compose", "Android"]
+    title: "Formz Kotlin — A Multiplatform Form Validation Library",
+    description:
+      "Formz-kotlin is a Kotlin implementation of Formz Dart library that simplifies form representation and validation by treating input fields as objects with built-in validation logic. It helps manage form states efficiently and reduces boilerplate code.",
+    url: "https://zainulhassan815.medium.com/formz-kotlin-a-multiplatform-form-validation-library-3af42d4f58e9",
+    tags: ["Kotlin Multiplatform", "Jetpack Compose", "Android"],
   },
   {
-    "title": "Setup Laravel Development Environment Using WSL on Windows",
-    "description": "Want to build Laravel apps on Windows without the usual headaches? This guide walks you through setting up a full Laravel development environment using WSL (Windows Subsystem for Linux), giving you the power of Linux with the convenience of Windows.",
-    "url": "https://zainulhassan815.medium.com/how-to-set-up-a-laravel-development-environment-using-wsl-on-windows-2025-guide-c3ddecc8690c",
-    "tags": ["Laravel", "PHP", "WSL"]
+    title: "Setup Laravel Development Environment Using WSL on Windows",
+    description:
+      "Want to build Laravel apps on Windows without the usual headaches? This guide walks you through setting up a full Laravel development environment using WSL (Windows Subsystem for Linux), giving you the power of Linux with the convenience of Windows.",
+    url: "https://zainulhassan815.medium.com/how-to-set-up-a-laravel-development-environment-using-wsl-on-windows-2025-guide-c3ddecc8690c",
+    tags: ["Laravel", "PHP", "WSL"],
   },
   {
-    "title": "Modelling State in Kotlin",
-    "description": "State in an app is any value that can change over time. All Android apps display state to the user. A few examples of state in Android apps: A Snackbar that shows when a network connection can’t be established. A blog post and associated comments. Ripple animations on buttons that play when a user clicks them. Stickers that a user can draw on top of an image.",
-    "url": "https://zainulhassan815.medium.com/modelling-state-in-kotlin-ef131693e044",
-    "tags": ["Kotlin", "Jetpack Compose", "Architecture", "State Management"]
-  }
+    title: "Modelling State in Kotlin",
+    description:
+      "State in an app is any value that can change over time. All Android apps display state to the user. A few examples of state in Android apps: A Snackbar that shows when a network connection can’t be established. A blog post and associated comments. Ripple animations on buttons that play when a user clicks them. Stickers that a user can draw on top of an image.",
+    url: "https://zainulhassan815.medium.com/modelling-state-in-kotlin-ef131693e044",
+    tags: ["Kotlin", "Jetpack Compose", "Architecture", "State Management"],
+  },
 ];
 
 export type Blog = {
