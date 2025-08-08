@@ -2,6 +2,7 @@ import { Projects } from "@/components/sections/projects";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Contact } from "@/components/sections/contact";
 import { Blogs } from "@/components/sections/blogs";
+import { Tools } from "@/components/sections/tools";
 
 import { Typography } from "@/components/ui/typography";
 
@@ -16,6 +17,7 @@ export default function Home() {
           This is a simple page created with Next.js and Tailwind CSS. Explore my projects below.
         </Typography>
       </div>
+      <Tools />
       <Projects id="projects" className="scroll-mt-(--header-height)" />
       <Testimonials id="testimonials" className="scroll-mt-(--header-height)" />
       <Blogs id="blog" className="scroll-mt-(--header-height)" />
