@@ -46,7 +46,7 @@ export const Header: FC<ComponentProps<"header">> = ({ className, ...props }) =>
         <div className="md:hidden">
           <DropdownMenu onOpenChange={setIsOpen}>
             <DropdownMenuTrigger asChild>
-              <Button size="icon" variant="outline">
+              <Button size="icon" variant="outline" aria-label="Toggle menu">
                 {isOpen ? <X /> : <Menu />}
               </Button>
             </DropdownMenuTrigger>

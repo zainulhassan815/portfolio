@@ -40,7 +40,12 @@ export const SocialLinks = () => {
     <div className="flex items-center gap-2">
       {socials.map((social) => (
         <Button key={social.name} asChild variant="secondary" className="size-12 p-2">
-          <a href={social.href} target="_blank" rel="noopener noreferrer">
+          <a
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Visit my ${social.name} profile`}
+          >
             <social.icon className="size-6" />
           </a>
         </Button>
