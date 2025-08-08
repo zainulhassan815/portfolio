@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="dark scroll-smooth">
       <body
         className={`${outfitSans.variable} ${jetbrainsMono.variable} text-foreground antialiased`}
       >
@@ -46,7 +46,7 @@ export default function RootLayout({
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(75%_60%_at_50%_0%,rgba(16,185,129,0.10),rgba(16,185,129,0)_60%)]"
           />
 
-          <Header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky inset-0 top-0 right-0 left-0 z-50 w-full border-b backdrop-blur" />
+          <Header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky inset-0 z-50 border-b backdrop-blur" />
           {children}
           <Footer />
         </div>
