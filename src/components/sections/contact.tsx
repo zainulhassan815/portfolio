@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 import { SocialLinks } from "@/components/sections/socials-links";
+import { FC, ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
-export const Contact = () => {
+export const Contact: FC<ComponentProps<"section">> = ({ className, ...props }) => {
   return (
-    <section className="w-full py-12">
+    <section className={cn("w-full py-12", className)} {...props}>
       <div className="container-sm mx-auto">
         <Typography variant="h2" className="mb-4">
           ✉️ Let’s Get in Touch

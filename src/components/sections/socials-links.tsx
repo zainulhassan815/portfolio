@@ -39,7 +39,7 @@ export const SocialLinks = () => {
   return (
     <div className="flex items-center gap-2">
       {socials.map((social) => (
-        <Button key={social.name} asChild variant="outline" className="size-12 p-2">
+        <Button key={social.name} asChild variant="secondary" className="size-12 p-2">
           <a href={social.href} target="_blank" rel="noopener noreferrer">
             <social.icon className="size-6" />
           </a>

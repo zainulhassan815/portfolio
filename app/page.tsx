@@ -7,7 +7,7 @@ import { Typography } from "@/components/ui/typography";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center space-y-8">
+    <main className="mt-(--header-height) flex min-h-screen flex-col items-center justify-center space-y-8">
       <div className="text-center">
         <Typography variant="h1" className="mb-4">
           Welcome to my Portfolio!
@@ -16,10 +16,10 @@ export default function Home() {
           This is a simple page created with Next.js and Tailwind CSS. Explore my projects below.
         </Typography>
       </div>
-      <Projects />
-      <Testimonials />
-      <Blogs />
-      <Contact />
+      <Projects id="projects" className="scroll-mt-(--header-height)" />
+      <Testimonials id="testimonials" className="scroll-mt-(--header-height)" />
+      <Blogs id="blog" className="scroll-mt-(--header-height)" />
+      <Contact id="contact" className="scroll-mt-(--header-height)" />
     </main>
   );
 }

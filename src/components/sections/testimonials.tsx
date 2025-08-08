@@ -1,12 +1,13 @@
-import { FC } from "react";
+import { FC, ComponentProps } from "react";
 import Image from "next/image";
 import { testimonials } from "@/lib/testimonials";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
+import { cn } from "@/lib/utils";
 
-export const Testimonials: FC = () => {
+export const Testimonials: FC<ComponentProps<"section">> = ({ className, ...props }) => {
   return (
-    <section className="py-12">
+    <section className={cn("py-12", className)} {...props}>
       <div className="container-sm mx-auto">
         <Typography variant="h2" className="mb-4">
           ⭐ What My Clients Say

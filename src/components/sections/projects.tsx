@@ -1,12 +1,13 @@
-import { FC } from "react";
+import { ComponentProps, FC } from "react";
 
 import { projects } from "@/lib/projects";
 import ProjectCard from "@/components/sections/project-card";
 import { Typography } from "@/components/ui/typography";
+import { cn } from "@/lib/utils";
 
-export const Projects: FC = () => {
+export const Projects: FC<ComponentProps<"section">> = ({ className, ...props }) => {
   return (
-    <section className="w-full py-12">
+    <section className={cn("w-full py-12", className)} {...props}>
       <div className="container-sm mx-auto">
         <Typography variant="h2" className="mb-4">
           📂 My Projects

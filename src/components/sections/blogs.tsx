@@ -1,11 +1,13 @@
 import { Typography } from "@/components/ui/typography";
 import { getBlogs } from "@/lib/blogs";
 import { BlogCard } from "./blog-card";
+import { FC, ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
-export const Blogs = () => {
+export const Blogs: FC<ComponentProps<"section">> = ({ className, ...props }) => {
   const blogs = getBlogs();
   return (
-    <section className="w-full py-12">
+    <section className={cn("w-full py-12", className)} {...props}>
       <div className="container-sm mx-auto">
         <Typography variant="h2" className="mb-4">
           📝 Blog Posts

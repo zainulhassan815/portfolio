@@ -49,6 +49,7 @@
   --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
+  --header-height: calc(var(--spacing) * 24);
 }
 
 .dark {
