@@ -10,7 +10,7 @@ export const Projects: FC<ComponentProps<"section">> = ({ className, ...props })
     <section className={cn("w-full py-12", className)} {...props}>
       <div className="container-sm mx-auto">
         <Typography variant="h2" className="mb-4">
-          📂 My Projects
+          🗂️ My Projects
         </Typography>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
