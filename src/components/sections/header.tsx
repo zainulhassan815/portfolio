@@ -50,7 +50,7 @@ export const Header: FC<ComponentProps<"header">> = ({ className, ...props }) =>
                 {isOpen ? <X /> : <Menu />}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent sideOffset={8} className="me-8">
+            <DropdownMenuContent sideOffset={8} align="end">
               <DropdownMenuItem>
                 <Button asChild variant="ghost">
                   <a href="#projects">
