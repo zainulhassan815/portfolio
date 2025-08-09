@@ -1,6 +1,8 @@
 import { Mail } from "lucide-react";
 import { GitHub, Instagram, LinkedIn, Twitter, Youtube } from "@/assets/icons";
 import { Button } from "@/components/ui/button";
+import { ComponentProps, FC } from "react";
+import { cn } from "@/lib/utils";
 
 const socials = [
   {
@@ -35,9 +37,9 @@ const socials = [
   },
 ];
 
-export const SocialLinks = () => {
+export const SocialLinks: FC<ComponentProps<"div">> = ({ className, ...props }) => {
   return (
-    <div className="flex items-center gap-2">
+    <div className={cn("flex flex-wrap items-center gap-2", className)} {...props}>
       {socials.map((social) => (
         <Button key={social.name} asChild variant="secondary" className="size-12 p-2">
           <a
