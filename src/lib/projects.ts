@@ -73,7 +73,7 @@ export const projects: Project[] = [
       "A robust, feature-rich starter template for building modern React applications. Includes Vite, shadcn/ui, Tailwind CSS, TanStack Query, Axios, Husky, Biome, and more.",
     url: "https://github.com/zainulhassan815/react-starter-js",
     technologies: ["React", "JavaScript"],
-    image: "/projects/newslayer.png",
+    image: "/projects/react-js-starter.png",
   },
   {
     name: "Express Starter JS",
