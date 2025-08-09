@@ -28,7 +28,7 @@ export const Testimonials: FC<ComponentProps<"section">> = ({ className, ...prop
                     className="rounded-full"
                   />
                   <div className="ms-4">
-                    <Typography variant="h4">{testimonial.name}</Typography>
+                    <Typography variant="large">{testimonial.name}</Typography>
                     <Typography variant="small">{testimonial.country}</Typography>
                   </div>
                 </div>
