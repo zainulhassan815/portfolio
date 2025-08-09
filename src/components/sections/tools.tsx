@@ -2,7 +2,6 @@ import { ComponentProps, FC } from "react";
 import Image from "next/image";
 
 import { tools } from "@/lib/tools";
-// import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 
@@ -12,9 +11,6 @@ export const Tools: FC<ComponentProps<"section">> = ({ className, ...props }) =>
 
   return (
     <section className={cn("w-full py-12", className)} {...props}>
-      {/* <Typography variant="h2" className="mb-4">
-        ⚙️ Tools & Technologies
-      </Typography> */}
       <div className="container-sm relative mx-auto">
         {allTools.map((row, idx) => (
           <Marquee key={idx} reverse={idx % 2 !== 0} className="[--duration:75s]">
