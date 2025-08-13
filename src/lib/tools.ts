@@ -3,6 +3,8 @@ export const tools = [
   { name: "jetpackcompose", image: "/tools/jetpackcompose.svg" },
   { name: "flutter", image: "/tools/flutter.svg" },
   { name: "kotlin", image: "/tools/kotlin.svg" },
+  { name: "android", image: "/tools/android.svg" },
+  { name: "ios", image: "/tools/apple.svg" },
 
   // Frontend
   { name: "nextjs", image: "/tools/nextjs.svg" },
