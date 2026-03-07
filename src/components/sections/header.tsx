@@ -1,6 +1,5 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 import { ComponentProps, FC, useState } from "react";
 import { Button } from "../ui/button";
@@ -12,37 +11,34 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+const navItems = ["Projects", "Testimonials", "Blog", "Contact"];
+
 export const Header: FC<ComponentProps<"header">> = ({ className, ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className={cn("h-(--header-height) w-full py-6", className)} {...props}>
       <div className="mx-auto flex items-center justify-between">
-        <a href="#">
-          <Typography variant="h3">Dreamers Lab</Typography>
+        {/* Newspaper Masthead */}
+        <a href="#" className="flex flex-col items-start">
+          <span className="font-serif text-2xl font-black tracking-[0.2em] uppercase md:text-3xl">
+            Dreamers Lab
+          </span>
+          <span className="text-muted-foreground text-xs tracking-[0.15em] uppercase">
+            Est. 2020 &middot; Software Engineering
+          </span>
         </a>
-        <nav className="hidden items-center gap-2 md:flex">
-          <Button asChild variant="ghost">
-            <a href="#projects">
-              <Typography variant="p">Projects</Typography>
-            </a>
-          </Button>
-          <Button asChild variant="ghost">
-            <a href="#testimonials">
-              <Typography variant="p">Testimonials</Typography>
-            </a>
-          </Button>
-          <Button asChild variant="ghost">
-            <a href="#blog">
-              <Typography variant="p">Blog</Typography>
-            </a>
-          </Button>
-          <Button asChild variant="ghost">
-            <a href="#contact">
-              <Typography variant="p">Contact</Typography>
-            </a>
-          </Button>
+
+        {/* Desktop Nav */}
+        <nav className="hidden items-center gap-1 md:flex">
+          {navItems.map((item) => (
+            <Button key={item} asChild variant="ghost" className="px-4 text-xs font-semibold uppercase tracking-widest">
+              <a href={`#${item.toLowerCase()}`}>{item}</a>
+            </Button>
+          ))}
         </nav>
+
+        {/* Mobile Menu */}
         <div className="md:hidden">
           <DropdownMenu onOpenChange={setIsOpen}>
             <DropdownMenuTrigger asChild>
@@ -51,34 +47,13 @@ export const Header: FC<ComponentProps<"header">> = ({ className, ...props }) =>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent sideOffset={8} align="end">
-              <DropdownMenuItem>
-                <Button asChild variant="ghost">
-                  <a href="#projects">
-                    <Typography variant="p">Projects</Typography>
+              {navItems.map((item) => (
+                <DropdownMenuItem key={item} asChild>
+                  <a href={`#${item.toLowerCase()}`} className="text-xs font-semibold uppercase tracking-widest">
+                    {item}
                   </a>
-                </Button>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Button asChild variant="ghost">
-                  <a href="#testimonials">
-                    <Typography variant="p">Testimonials</Typography>
-                  </a>
-                </Button>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Button asChild variant="ghost">
-                  <a href="#blog">
-                    <Typography variant="p">Blog</Typography>
-                  </a>
-                </Button>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Button asChild variant="ghost">
-                  <a href="#contact">
-                    <Typography variant="p">Contact</Typography>
-                  </a>
-                </Button>
-              </DropdownMenuItem>
+                </DropdownMenuItem>
+              ))}
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

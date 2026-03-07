@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Outfit } from "next/font/google";
+import { JetBrains_Mono, Lora, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/sections/header";
-import { GridPattern } from "@/components/magicui/grid-pattern";
-import { cn } from "@/lib/utils";
 
-const outfitSans = Outfit({
-  variable: "--font-outfit-sans",
+const lora = Lora({
+  variable: "--font-lora",
+  subsets: ["latin"],
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
   subsets: ["latin"],
 });
 
@@ -28,24 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${outfitSans.variable} ${jetbrainsMono.variable} text-foreground antialiased`}
+        className={`${lora.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} text-foreground antialiased`}
       >
-        <div className="relative container mx-auto min-h-screen max-w-screen-xl p-4 md:p-8">
-          {/* Background grid pattern */}
-          <GridPattern
-            className={cn(
-              "pointer-events-none h-screen w-full",
-              "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-            )}
-          />
-
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(75%_60%_at_50%_0%,rgba(16,185,129,0.10),rgba(16,185,129,0)_60%)]"
-          />
-
+        <div className="retro-stripes relative container mx-auto min-h-screen max-w-screen-xl p-4 md:p-8">
           <Header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky inset-0 z-50 border-b backdrop-blur" />
           {children}
           <Footer />
