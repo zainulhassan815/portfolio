@@ -14,7 +14,7 @@ export const Projects: FC<ComponentProps<"section">> = ({ className, ...props })
         {/* Bold section heading */}
         <div className="mb-8">
           <div className="bg-foreground mb-3 h-1" />
-          <Typography variant="h2" className="mb-0 pb-0 font-serif text-4xl font-black uppercase tracking-[0.15em] md:text-5xl">
+          <Typography variant="h2" className="mb-0 pb-0 font-serif text-2xl font-black uppercase tracking-[0.1em] sm:text-4xl sm:tracking-[0.15em] md:text-5xl">
             Projects
           </Typography>
         </div>
@@ -25,7 +25,7 @@ export const Projects: FC<ComponentProps<"section">> = ({ className, ...props })
         </div>
 
         {/* Rest of projects in grid */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="border-foreground/20 grid grid-cols-1 border-t-2 border-l-2 md:grid-cols-2 lg:grid-cols-3 [&>article]:border-foreground/20 [&>article]:border-b-2 [&>article]:border-r-2 [&>article]:p-6">
           {rest.map((project) => (
             <ProjectCard key={project.name} project={project} />
           ))}

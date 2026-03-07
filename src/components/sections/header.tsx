@@ -22,7 +22,7 @@ export const Header: FC<ComponentProps<"header">> = ({ className, ...props }) =>
       <div className="bg-foreground h-1" />
 
       {/* Masthead */}
-      <div className="flex flex-col items-center py-5">
+      <div className="flex flex-col items-center pt-5 pb-1.5">
         <a href="#" className="flex flex-col items-center">
           <span className="font-serif text-4xl font-black tracking-[0.3em] uppercase md:text-6xl lg:text-7xl">
             Dreamers Lab
@@ -38,7 +38,7 @@ export const Header: FC<ComponentProps<"header">> = ({ className, ...props }) =>
       </div>
 
       {/* Bold nav bar */}
-      <div className="bg-foreground text-background flex items-center justify-between px-4 py-2.5">
+      <div className="bg-foreground text-background flex items-center justify-between px-6 py-2.5 md:px-10">
         <nav className="hidden items-center gap-0 md:flex">
           {navItems.map((item, i) => (
             <div key={item} className="flex items-center">

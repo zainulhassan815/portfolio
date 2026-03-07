@@ -16,7 +16,7 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = ({ project, featured }) => {
   if (featured) {
     return (
-      <article className="border-foreground/20 grid grid-cols-1 gap-8 border-b-2 pb-10 md:grid-cols-2">
+      <article className="grid grid-cols-1 gap-8 pb-10 md:grid-cols-2">
         <div className="relative h-64 w-full md:h-80">
           <Image
             src={project.image}
@@ -53,7 +53,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, featured }) => {
   }
 
   return (
-    <article className={cn("border-foreground/20 flex flex-col gap-3 border-t-2 pt-5")}>
+    <article className={cn("flex flex-col gap-3")}>
       <div className="relative h-48 w-full">
         <Image
           src={project.image}

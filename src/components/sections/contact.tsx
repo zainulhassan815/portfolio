@@ -11,7 +11,7 @@ export const Contact: FC<ComponentProps<"section">> = ({ className, ...props }) 
         {/* Bold section heading */}
         <div className="mb-8">
           <div className="bg-foreground mb-3 h-1" />
-          <Typography variant="h2" className="mb-0 pb-0 font-serif text-4xl font-black uppercase tracking-[0.15em] md:text-5xl">
+          <Typography variant="h2" className="mb-0 pb-0 font-serif text-2xl font-black uppercase tracking-[0.1em] sm:text-4xl sm:tracking-[0.15em] md:text-5xl">
             Get in Touch
           </Typography>
         </div>
