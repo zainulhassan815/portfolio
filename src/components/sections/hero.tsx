@@ -62,7 +62,6 @@ export const Hero: FC<ComponentProps<"section">> = ({ className, ...props }) => 
         </div>
       </div>
 
-      <div className="newspaper-rule mt-8" />
     </section>
   );
 };
