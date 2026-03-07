@@ -11,9 +11,10 @@ export const Blogs: FC<ComponentProps<"section">> = ({ className, ...props }) =>
   return (
     <section className={cn("w-full py-12", className)} {...props}>
       <div className="container-sm mx-auto">
-        {/* Section heading */}
-        <div className="border-foreground/15 mb-8 border-b pb-2">
-          <Typography variant="h2" className="mb-0 pb-0 font-serif uppercase tracking-[0.15em]">
+        {/* Bold section heading */}
+        <div className="mb-8">
+          <div className="bg-foreground mb-3 h-1" />
+          <Typography variant="h2" className="mb-0 pb-0 font-serif text-4xl font-black uppercase tracking-[0.15em] md:text-5xl">
             Blog Posts
           </Typography>
         </div>
@@ -22,23 +23,23 @@ export const Blogs: FC<ComponentProps<"section">> = ({ className, ...props }) =>
         <div className="mb-8 grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr]">
           <BlogCard {...featured} featured />
 
-          <div className="border-foreground/10 flex flex-col gap-4 lg:border-l lg:pl-8">
-            <Typography variant="small" className="text-muted-foreground uppercase tracking-widest">
+          <div className="border-foreground/20 flex flex-col gap-4 lg:border-l-2 lg:pl-8">
+            <span className="bg-foreground text-background inline-block w-fit px-2 py-0.5 text-[10px] font-black uppercase tracking-[0.2em]">
               More Articles
-            </Typography>
+            </span>
             {rest.map((blog) => (
               <BlogCard key={blog.title} {...blog} />
             ))}
           </div>
         </div>
 
-        <Typography className="mt-4">
+        <Typography className="mt-4 font-bold">
           Read more on{" "}
           <a
             href="https://zainulhassan815.medium.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary font-semibold underline underline-offset-4"
+            className="text-primary underline decoration-2 underline-offset-4"
           >
             Medium
           </a>
