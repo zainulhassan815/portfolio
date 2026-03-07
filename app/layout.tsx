@@ -35,8 +35,8 @@ export default function RootLayout({
       <body
         className={`${lora.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} text-foreground antialiased`}
       >
-        <div className="retro-stripes relative container mx-auto min-h-screen max-w-screen-xl p-4 md:p-8">
-          <Header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky inset-0 z-50 border-b backdrop-blur" />
+        <div className="relative container mx-auto min-h-screen max-w-screen-xl px-4 md:px-8">
+          <Header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky inset-0 z-50 backdrop-blur" />
           {children}
           <Footer />
         </div>

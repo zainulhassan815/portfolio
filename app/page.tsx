@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <main className="mt-(--header-height) flex min-h-screen flex-col items-center justify-center space-y-8">
       <Hero id="hero" className="scroll-mt-(--header-height)" />
-      <Tools id="tools" className="scroll-mt-(--header-height)" />
       <Projects id="projects" className="scroll-mt-(--header-height)" />
+      <Tools id="tools" className="scroll-mt-(--header-height)" />
       <Testimonials id="testimonials" className="scroll-mt-(--header-height)" />
       <Blogs id="blog" className="scroll-mt-(--header-height)" />
       <Contact id="contact" className="scroll-mt-(--header-height)" />

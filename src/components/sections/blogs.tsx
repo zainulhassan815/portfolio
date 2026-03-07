@@ -6,21 +6,33 @@ import { cn } from "@/lib/utils";
 
 export const Blogs: FC<ComponentProps<"section">> = ({ className, ...props }) => {
   const blogs = getBlogs();
+  const [featured, ...rest] = blogs;
+
   return (
     <section className={cn("w-full py-12", className)} {...props}>
       <div className="container-sm mx-auto">
-        <div className="mb-6 flex items-center gap-4">
-          <Typography variant="h2" className="mb-0 shrink-0 pb-0 font-serif uppercase tracking-widest">
+        {/* Section heading */}
+        <div className="border-foreground/15 mb-8 border-b pb-2">
+          <Typography variant="h2" className="mb-0 pb-0 font-serif uppercase tracking-[0.15em]">
             Blog Posts
           </Typography>
-          <div className="newspaper-rule-thick mt-1 flex-1" />
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {blogs.map((blog) => (
-            <BlogCard key={blog.title} {...blog} />
-          ))}
+
+        {/* Featured blog + sidebar list */}
+        <div className="mb-8 grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr]">
+          <BlogCard {...featured} featured />
+
+          <div className="border-foreground/10 flex flex-col gap-4 lg:border-l lg:pl-8">
+            <Typography variant="small" className="text-muted-foreground uppercase tracking-widest">
+              More Articles
+            </Typography>
+            {rest.map((blog) => (
+              <BlogCard key={blog.title} {...blog} />
+            ))}
+          </div>
         </div>
-        <Typography className="mt-6">
+
+        <Typography className="mt-4">
           Read more on{" "}
           <a
             href="https://zainulhassan815.medium.com"

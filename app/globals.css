@@ -8,7 +8,7 @@
   --foreground: oklch(0.15 0.01 50);
   --card: oklch(0.985 0.003 75);
   --card-foreground: oklch(0.15 0.01 50);
-  --popover: oklch(0.98 0.005 75);
+  --popover: oklch(0.985 0.003 75);
   --popover-foreground: oklch(0.15 0.01 50);
   --primary: oklch(0.65 0.12 350);
   --primary-foreground: oklch(1 0 0);
@@ -42,15 +42,15 @@
   --radius: 0px;
   --shadow-2xs: none;
   --shadow-xs: none;
-  --shadow-sm: 0px 1px 2px 0px hsl(30 10% 20% / 0.06);
-  --shadow: 0px 1px 3px 0px hsl(30 10% 20% / 0.08);
-  --shadow-md: 0px 2px 4px 0px hsl(30 10% 20% / 0.08);
-  --shadow-lg: 0px 4px 8px 0px hsl(30 10% 20% / 0.08);
-  --shadow-xl: 0px 8px 16px 0px hsl(30 10% 20% / 0.08);
-  --shadow-2xl: 0px 12px 24px 0px hsl(30 10% 20% / 0.12);
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
   --tracking-normal: 0em;
   --spacing: 0.25rem;
-  --header-height: calc(var(--spacing) * 24);
+  --header-height: calc(var(--spacing) * 32);
 }
 
 .dark {
@@ -92,12 +92,12 @@
   --radius: 0px;
   --shadow-2xs: none;
   --shadow-xs: none;
-  --shadow-sm: 0px 1px 2px 0px hsl(0 0% 0% / 0.15);
-  --shadow: 0px 1px 3px 0px hsl(0 0% 0% / 0.2);
-  --shadow-md: 0px 2px 4px 0px hsl(0 0% 0% / 0.2);
-  --shadow-lg: 0px 4px 8px 0px hsl(0 0% 0% / 0.2);
-  --shadow-xl: 0px 8px 16px 0px hsl(0 0% 0% / 0.2);
-  --shadow-2xl: 0px 12px 24px 0px hsl(0 0% 0% / 0.3);
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
 }
 
 @theme inline {
@@ -184,29 +184,6 @@
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
-}
-
-/* Retro newspaper vertical stripes background */
-.retro-stripes {
-  background-image: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 48px,
-    oklch(0.90 0.03 340 / 0.25) 48px,
-    oklch(0.90 0.03 340 / 0.25) 50px
-  );
-}
-
-/* Newspaper horizontal rule */
-.newspaper-rule {
-  border: none;
-  border-top: 1px solid oklch(0.15 0.01 50);
-  position: relative;
-}
-
-.newspaper-rule-thick {
-  border: none;
-  border-top: 3px double oklch(0.15 0.01 50);
 }
 
 /* Grayscale for images - newspaper print feel */

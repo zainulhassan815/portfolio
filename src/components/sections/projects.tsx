@@ -6,17 +6,26 @@ import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 
 export const Projects: FC<ComponentProps<"section">> = ({ className, ...props }) => {
+  const [featured, ...rest] = projects;
+
   return (
     <section className={cn("w-full py-12", className)} {...props}>
       <div className="container-sm mx-auto">
-        <div className="mb-6 flex items-center gap-4">
-          <Typography variant="h2" className="mb-0 shrink-0 pb-0 font-serif uppercase tracking-widest">
+        {/* Section heading */}
+        <div className="border-foreground/15 mb-8 border-b pb-2">
+          <Typography variant="h2" className="mb-0 pb-0 font-serif uppercase tracking-[0.15em]">
             Projects
           </Typography>
-          <div className="newspaper-rule-thick mt-1 flex-1" />
         </div>
+
+        {/* Featured project - full width */}
+        <div className="mb-8">
+          <ProjectCard project={featured} featured />
+        </div>
+
+        {/* Rest of projects in grid */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+          {rest.map((project) => (
             <ProjectCard key={project.name} project={project} />
           ))}
         </div>
