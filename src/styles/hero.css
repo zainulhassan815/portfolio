@@ -1,0 +1,126 @@
+/* ==========================================================
+   HERO
+   ========================================================== */
+.hero {
+  position: relative; display: flex; align-items: center;
+  padding: 104px 0 76px;
+}
+
+/* Content and proof card sit in one grid. The card used to be absolutely
+   positioned, which is why it left a hole at the top right and had to be
+   re-placed by hand at every breakpoint. */
+.hero-grid {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: 46px; align-items: start; width: 100%;
+}
+/* line the card up with the headline rather than the status chip above it */
+.hero-grid .proof-card-wrap { margin-top: 54px; }
+@media (max-width: 1040px) { .hero-grid .proof-card-wrap { margin-top: 0; } }
+.hero-content { min-width: 0; }
+
+@media (max-width: 1040px) {
+  .hero { padding: 92px 0 64px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 44px; justify-items: start; }
+}
+@media (max-width: 600px) { .hero { padding: 84px 0 52px; } }
+
+/* Square, hard-edged, to match the buttons. The rounded pill with a pulsing
+   dot is the exact SaaS trope the brief warned about. */
+.status-line {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: ui-monospace, monospace; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink);
+  margin-bottom: 22px; padding: 7px 12px;
+  background: var(--bg); border: 2px solid var(--edge); border-radius: 0;
+}
+.status-line .dot {
+  width: 8px; height: 8px; border-radius: 0; background: var(--pop);
+  outline: 1.5px solid var(--edge); flex-shrink: 0; animation: pulse 2.4s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+@media (prefers-reduced-motion: reduce) { .status-line .dot { animation: none; } }
+
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(2.7rem, 7.6vw, 6rem);
+  font-weight: 900; font-variation-settings: "wdth" 92;
+  letter-spacing: -0.04em; line-height: 0.9;
+  text-transform: uppercase;
+  /* 16ch, not 14. "fullstack" has no hyphen to break at, so the balancer
+     needs the extra room or it splits "end to end." across two lines. */
+  max-width: 16ch; margin: 0 0 22px;
+}
+.hero h1 em { font-style: normal; font-weight: 900; }
+
+.hero-dek {
+  font-size: 1.24rem; color: var(--ink-soft); max-width: 48ch;
+  margin: 0 0 30px; line-height: 1.7;
+}
+
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-bottom: 40px; }
+
+/* Retro button: flat lime, hard black edge, no blur, no gradient.
+   Press moves it into its own shadow. */
+.btn-primary {
+  position: relative; display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--display);
+  font-size: 1rem; font-weight: 800; letter-spacing: 0.01em;
+  text-transform: uppercase;
+  padding: 18px 34px; border-radius: var(--radius);
+  color: var(--pop-ink); background: var(--pop);
+  border: 2.5px solid var(--edge);
+  box-shadow: var(--shadow-hard);
+  transform: translate(0, 0);
+  transition: transform 0.11s ease, box-shadow 0.11s ease, background 0.2s ease;
+}
+.btn-primary:hover { background: var(--pop-deep); transform: translate(3px, 3px); box-shadow: var(--shadow-hard-sm); }
+.btn-primary:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--edge); }
+.btn-primary .arrow { transition: transform 0.25s var(--ease-out-expo); }
+.btn-primary:hover .arrow { transform: translateX(5px); }
+
+/* Same shape, unfilled. For the secondary action. */
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--display);
+  font-size: 1rem; font-weight: 800; letter-spacing: 0.01em; text-transform: uppercase;
+  padding: 18px 34px; border-radius: var(--radius);
+  color: var(--ink); background: var(--bg);
+  border: 2.5px solid var(--edge); box-shadow: var(--shadow-hard);
+  transition: transform 0.11s ease, box-shadow 0.11s ease, background 0.2s ease;
+}
+.btn-ghost:hover { background: var(--bg-raise); transform: translate(3px, 3px); box-shadow: var(--shadow-hard-sm); }
+.btn-ghost:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--edge); }
+.btn-ghost .arrow { transition: transform 0.25s var(--ease-out-expo); }
+.btn-ghost:hover .arrow { transform: translateX(5px); }
+
+.btn-text {
+  font-size: 0.94rem; font-weight: 700; text-decoration: none; color: var(--ink);
+  display: inline-flex; align-items: center; gap: 8px;
+  border-bottom: 2px solid var(--ink-faint); padding-bottom: 4px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-text:hover { border-color: var(--accent); color: var(--accent); }
+.btn-text .arrow { transition: transform 0.25s var(--ease-out-expo); }
+.btn-text:hover .arrow { transform: translateX(4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary, .btn-ghost, .btn-primary .arrow, .btn-ghost .arrow { transition: none; }
+}
+
+/* ==========================================================
+   HERO LOAD-IN
+   ========================================================== */
+.rise {
+  opacity: 0; transform: translateY(22px);
+  animation: rise 0.85s var(--ease-out-expo) forwards;
+  animation-delay: var(--rise-delay, 0s);
+}
+@keyframes rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rise { opacity: 1; transform: none; animation: none; }
+}

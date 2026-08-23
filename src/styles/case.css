@@ -1,0 +1,91 @@
+/* ==========================================================
+   CASE STUDY DETAIL PAGE
+   Only what the landing page does not already carry. Everything
+   shared (case-meta, case-cols, big-stats, case-shot)
+   comes from work.css.
+   ========================================================== */
+.case { padding: 150px 0 90px; }
+@media (max-width: 1040px) { .case { padding: 120px 0 70px; } }
+@media (max-width: 600px) { .case { padding: 100px 0 56px; } }
+
+.case-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: ui-monospace, monospace; font-size: 0.74rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-soft); margin-bottom: 34px;
+  border-bottom: 2px solid transparent; padding-bottom: 3px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.case-back:hover { color: var(--ink); border-bottom-color: var(--pop); }
+
+.case-hero-title {
+  font-family: var(--display); font-weight: 900;
+  font-variation-settings: "wdth" 93;
+  font-size: clamp(2.3rem, 5.4vw, 4.2rem);
+  letter-spacing: -0.04em; line-height: 0.94;
+  max-width: 17ch; margin: 0 0 26px;
+}
+
+/* Facts a buyer asks before reading the story: what was the role, how was
+   it engaged, when, and on what. */
+.case-facts {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px; margin: 0 0 44px;
+  padding: 22px 0; border-top: 2px solid var(--edge); border-bottom: 2px solid var(--edge);
+}
+@media (max-width: 760px) { .case-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; } }
+.case-facts div { min-width: 0; }
+.case-facts dt {
+  font-family: ui-monospace, monospace; font-size: 0.66rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--ink-soft); margin-bottom: 6px;
+}
+.case-facts dd {
+  margin: 0; font-family: var(--display); font-weight: 700;
+  font-size: 1rem; letter-spacing: -0.015em; line-height: 1.25;
+}
+
+.case-h2 {
+  font-family: var(--display); font-weight: 900;
+  font-variation-settings: "wdth" 93;
+  font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -0.035em;
+  line-height: 1.02; text-transform: uppercase;
+  margin: 58px 0 18px; max-width: 20ch;
+}
+
+.case p {
+  max-width: 68ch; color: var(--ink-soft);
+  font-size: 1.02rem; line-height: 1.75; margin: 0 0 16px;
+}
+.case .case-lede { color: var(--ink); }
+
+.case-outcome {
+  margin-top: 58px; padding: 30px 32px;
+  background: var(--bg-raise); border: 2px solid var(--edge);
+}
+.case-outcome .case-h2 { margin-top: 0; }
+@media (max-width: 600px) { .case-outcome { padding: 24px 20px; } }
+
+.case-cta { margin-top: 66px; padding-top: 40px; border-top: 2px solid var(--edge); }
+.case-cta .case-h2 { margin-top: 0; margin-bottom: 26px; }
+.case-cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.case-cta .case-h2 { flex: 1 0 100%; }
+@media (max-width: 520px) {
+  .case-cta { flex-direction: column; align-items: stretch; }
+  .case-cta .btn-primary, .case-cta .btn-ghost { justify-content: center; }
+}
+
+/* This page has no theme toggle or progress bar, so the footer needs
+   its own breathing room. */
+.case + .foot, .foot { margin-top: 0; }
+
+/* header.css hides .nav-contact below 760px because the landing page swaps in
+   a hamburger. This page has no hamburger, so the CTA has to survive.
+   Safe to override unconditionally: case.css only loads on detail pages. */
+@media (max-width: 760px) {
+  .nav-contact { display: inline-flex; }
+}
+@media (max-width: 460px) {
+  .brand-studio { display: none; }
+  .nav-contact { font-size: 0.78rem; }
+}

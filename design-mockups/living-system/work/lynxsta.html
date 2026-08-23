@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Lynxsta, a payment-backed booking tool for independent stylists. Next.js, Supabase and Stripe Connect, built by Zain Ul Hassan." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Lynxsta &middot; Case study &middot; Zain Ul Hassan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..900&display=swap" />
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/cursor.css" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/hero.css" />
+  <link rel="stylesheet" href="../css/chrome.css" />
+  <link rel="stylesheet" href="../css/sections.css" />
+  <link rel="stylesheet" href="../css/work.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+  <link rel="stylesheet" href="../css/case.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="cur-ring" aria-hidden="true"><span class="label"></span></div>
+  <div id="cur-dot" aria-hidden="true"></div>
+
+  <header class="top" aria-label="Site">
+    <div class="wrap nav-row">
+      <a class="brand-group" href="../index.html">
+        <span class="brand serif" style="font-style:italic;">Zain Ul Hassan</span>
+        <span class="brand-studio">Dreamers Lab</span>
+      </a>
+      <nav class="links" aria-label="Primary">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#testimonials">Reviews</a>
+        <a href="../index.html#writing">Writing</a>
+      </nav>
+      <a class="nav-contact" href="../index.html#contact" data-cursor="Let's go">Start a project</a>
+    </div>
+  </header>
+
+  <button class="floating-toolbar theme-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+
+  <main id="main">
+    <article class="case">
+      <div class="wrap">
+        <a class="case-back" href="../index.html#work"><span aria-hidden="true">&larr;</span> All work</a>
+
+        <div class="case-meta"><span>Web app</span><span class="sep">/</span><span>Payments &amp; booking</span><span class="sep">&middot;</span><span>Shipped, in daily use</span></div>
+        <h1 class="case-hero-title">Lynxsta: a booking that is real because it is paid for.</h1>
+
+        <dl class="case-facts">
+          <div><dt>Role</dt><dd>Sole engineer, design and build</dd></div>
+          <div><dt>Engagement</dt><dd>Fixed price, milestone based</dd></div>
+          <div><dt>Started</dt><dd>March 2026, ongoing</dd></div>
+          <div><dt>Stack</dt><dd>Next.js, Supabase, Stripe Connect</dd></div>
+        </dl>
+
+        <figure class="case-shot">
+          <img src="../assets/portfolio/lynxsta-thumb.webp" width="2000" height="1125"
+               alt="Lynxsta on two phones: the stylist dashboard listing today's appointments, each marked Deposit Paid, beside the month calendar view." />
+          <figcaption>The stylist side: appointments arrive already paid for.</figcaption>
+        </figure>
+
+        <div class="case-cols">
+          <div><b>Who it is for</b><p>Hairstylists, lash techs and nail artists who take bookings by WhatsApp and Instagram. A message, a price, a date, and nothing binding. For a solo operator, one no-show is that day's income gone.</p></div>
+          <div><b>What it does</b><p>Stylists build reusable service templates, then spin up a booking link per client in seconds. The client walks four short steps, appointment, prep, terms, payment, and can leave and come back without losing their place. The slot is held for 20 minutes while they pay.</p></div>
+          <div><b>What it changes</b><p>Every booking arrives paid for, on the record, with the cancellation terms already agreed. The deposit and the platform fee are taken as a single payment, so the stylist is never chasing a half-finished booking.</p></div>
+        </div>
+
+        <h2 class="case-h2">The brief, and where I argued with it</h2>
+        <p>The spec asked for two separate charges, a platform fee and a stylist deposit. That is two independent failure points: the fee lands, the deposit does not, and someone reconciles a half-paid booking by hand. I collapsed it into one Stripe destination charge, so the deposit and the fee are captured together or not at all.</p>
+        <p>It also asked for an event-driven architecture. Standing up a message queue for an MVP at this scale solves a problem the product does not have yet, so events and state changes commit in the same Postgres transaction and drain through a cron-run outbox. Same guarantee that state and audit trail cannot drift apart, none of the operational weight, and a clean migration path to a real queue if the volume ever asks for one.</p>
+
+        <h2 class="case-h2">The hard part is timing, not checkout</h2>
+        <p>A payment can land a second after a hold expired. A Stripe webhook and the expiry sweep can hit the same booking within moments of each other. So every state transition is a conditional update on a version column: whichever writer loses the race gets zero rows affected and backs off cleanly instead of the two of them stomping on each other.</p>
+        <p>Underneath that, a Postgres constraint allows at most one completed payment per booking, whatever the application code does. The 20 minute hold is enforced three ways rather than one, because each on its own has a hole: a client-side countdown is cosmetic, a check on next request misses anyone who never comes back, and a periodic sweep alone has latency. A 60 second grace buffer keeps a payment that is genuinely in flight from being expired out from under the client.</p>
+
+        <h2 class="case-h2">Shipped, then changed by real use</h2>
+        <p>The MVP launched as a single confirmation step. Once the stylist was using it with real clients, the feedback was that clients needed the agreement broken into separately acknowledged steps, and needed to be able to leave and come back. I rebuilt it as a four stage flow where the payment endpoint independently verifies all four stages completed before Stripe Checkout opens, so the frontend sequencing is not the only gate. Reusable service templates came out of the same round, so the stylist stopped retyping the same service for every booking.</p>
+
+        <div class="case-outcome">
+          <h2 class="case-h2">Where it stands</h2>
+          <p>Launched on every original acceptance criterion and in daily use. Booking volume and no-show numbers <span class="tbd" title="Placeholder: ask the client for post-launch figures">to be confirmed</span>.</p>
+          <p class="case-tech-meta">Next.js &middot; TypeScript &middot; Supabase &middot; Postgres &middot; Row-level security &middot; Stripe Connect Express &middot; Resend &middot; WhatsApp Cloud API &middot; Vercel cron &middot; Vitest</p>
+        </div>
+
+        <div class="case-cta">
+          <h2 class="case-h2">Building something where the money has to be right?</h2>
+          <a class="btn-primary" href="../index.html#contact" data-cursor="Let's go"><span>Start a project</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn-ghost" href="../index.html#work" data-cursor="Back"><span>See other work</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="foot" aria-label="Footer">
+      <div class="wrap">
+        <div class="foot-row">
+          <span>&copy; 2026 Zain Ul Hassan &middot; Dreamers Lab &middot; Lahore, Pakistan</span>
+          <div class="foot-links"><a href="https://upwork.com/freelancers/zainu205" target="_blank" rel="noopener">Upwork</a><a href="https://github.com/zainulhassan815" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/zainulhassan815" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:dreamerslabdev@gmail.com">Email</a></div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/chrome.js"></script>
+  <script src="../js/cursor.js"></script>
+</body>
+</html>

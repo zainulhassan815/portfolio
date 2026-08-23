@@ -1,0 +1,96 @@
+/* ==========================================================
+   TOKENS
+   ========================================================== */
+:root {
+  --bg: #ffffff;
+  --bg-raise: #f7f7f5;
+  --bg-elevated: #ffffff;
+  --ink: #111111;
+  --ink-soft: #444444;
+  --ink-faint: #6b6b6b;   /* 5.3:1 on white; #777 measured 4.48:1, an AA fail */
+  --line: rgba(0,0,0,0.10);
+  --line-strong: rgba(0,0,0,0.18);
+
+  /* One green, and it has to carry text. The old moss #059669 measured
+     3.77:1 on white, an AA fail, so light mode uses a deeper green.
+     Dark mode needs the opposite, hence the override in each dark block. */
+  --accent-rgb: 4,120,87;        /* #047857, 5.48:1 on white */
+  --accent: rgb(var(--accent-rgb));
+  --accent-quiet: rgba(var(--accent-rgb), 0.35);
+  --accent-surface: rgba(var(--accent-rgb), 0.08);
+
+  /* POP: a lime fill that carries dark text, the Wise move. Never a text
+     colour on white, use --accent when you need readable ink. */
+  --pop: #c8f169;
+  --pop-deep: #a8dd3c;
+  --pop-ink: #101a04;
+
+  /* Retro button: a hard offset, no blur. */
+  --edge: #101010;
+  --shadow-hard: 6px 6px 0 var(--edge);
+  --shadow-hard-sm: 4px 4px 0 var(--edge);
+
+  /* Semantic tints. Each one MEANS something, see the map in README.
+     Used in small doses: category chips, stat underlines, placeholders.
+     Never as a section background, that is what --bg-raise is for. */
+  --t-mint-bg:   #d6f2e2;  --t-mint-ink:   #0c4429;   /* payments, money moving */
+  --t-lilac-bg:  #e6dffb;  --t-lilac-ink:  #33206b;   /* AI and LLM work */
+  --t-sky-bg:    #d8e9fb;  --t-sky-ink:    #123a63;   /* data, infra, backend */
+  --t-peach-bg:  #fde0d3;  --t-peach-ink:  #6b2c12;   /* security, audits, risk */
+  --t-butter-bg: #fbeec2;  --t-butter-ink: #5c4408;   /* unconfirmed, placeholder */
+  --t-blush-bg:  #fadde8;  --t-blush-ink:  #6b1739;   /* design, UX, product */
+
+  --display: var(--font-archivo), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+  --radius: 3px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 22px 60px rgba(0,0,0,0.14);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #0a0a0c;
+    --bg-raise: #111114;
+    --bg-elevated: #16161a;
+    --ink: #f2f2f5;
+    --ink-soft: #a8a8b3;
+    --ink-faint: #6e6e7a;
+    --line: rgba(255,255,255,0.10);
+    --line-strong: rgba(255,255,255,0.18);
+    --t-mint-bg:   #12352a;  --t-mint-ink:   #8fe3bb;
+    --t-lilac-bg:  #241d43;  --t-lilac-ink:  #c3b2f5;
+    --t-sky-bg:    #16293f;  --t-sky-ink:    #a3cdf2;
+    --t-peach-bg:  #3b2015;  --t-peach-ink:  #f5b394;
+    --t-butter-bg: #35290c;  --t-butter-ink: #edd07f;
+    --t-blush-bg:  #3a1726;  --t-blush-ink:  #f2a8c4;
+    --accent-rgb: 52,211,153;   /* #34d399, 10.3:1 on the dark ground */
+    --edge: #f4f4f6;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0a0a0c;
+  --bg-raise: #111114;
+  --bg-elevated: #16161a;
+  --ink: #f2f2f5;
+  --ink-soft: #a8a8b3;
+  --ink-faint: #6e6e7a;
+  --line: rgba(255,255,255,0.10);
+  --line-strong: rgba(255,255,255,0.18);
+  --t-mint-bg:   #12352a;  --t-mint-ink:   #8fe3bb;
+  --t-lilac-bg:  #241d43;  --t-lilac-ink:  #c3b2f5;
+  --t-sky-bg:  #16293f;  --t-sky-ink:  #a3cdf2;
+  --t-peach-bg:  #3b2015;  --t-peach-ink:  #f5b394;
+  --t-butter-bg: #35290c;  --t-butter-ink: #edd07f;
+  --t-blush-bg:  #3a1726;  --t-blush-ink:  #f2a8c4;
+  --accent-rgb: 52,211,153;
+  --edge: #f4f4f6;
+  color-scheme: dark;
+}
+

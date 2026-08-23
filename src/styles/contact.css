@@ -1,0 +1,232 @@
+/* ==========================================================
+   CONTACT
+   ========================================================== */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 70px; }
+/* the board must not stretch to the left column, or dead board hangs below the sheet */
+.contact-grid { align-items: start; }
+@media (max-width: 840px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-copy h2 { margin: 0 0 18px; }
+.contact-copy p.copy { color: var(--ink-soft); max-width: 40ch; font-size: 1.04rem; }
+.direct-line { margin-top: 30px; font-family: ui-monospace, monospace; font-size: 0.85rem; }
+.direct-line a {
+  color: var(--ink); font-weight: 600;
+  border-bottom: 2px solid var(--pop); padding-bottom: 2px;
+}
+.direct-line a:hover { background: var(--pop); color: var(--pop-ink); border-bottom-color: var(--edge); }
+
+/* The form is the conversion point, so it is a panel with weight rather
+   than five hairlines floating on the page ground. */
+/* The form panel is defined once, with the clipboard, further down. */
+
+.form-note {
+  font-family: ui-monospace, monospace; font-size: 0.7rem;
+  color: var(--ink-soft); margin: 0 0 20px;
+}
+.req { color: var(--accent); font-weight: 700; }
+
+.field { margin-bottom: 18px; position: relative; }
+.field label {
+  display: block; font-family: ui-monospace, monospace; font-size: 0.68rem;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); margin-bottom: 7px;
+}
+.field input, .field select, .field textarea {
+  width: 100%; background: var(--bg-raise); color: var(--ink);
+  border: 1.5px solid var(--line-strong); border-radius: 0;
+  padding: 11px 12px;
+  font-family: inherit;      /* was a truncated -apple-system stack, which
+                                rendered the form in a different face on
+                                Windows and Android */
+  font-size: 1rem;           /* 16px. Below this, iOS zooms the viewport on
+                                every focus, at the conversion point. */
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--ink-faint); }
+
+/* `.field input:focus` (0,2,1) was beating the global `:focus-visible`
+   (0,1,1) and killing the ring, leaving only a 1px border change. */
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible,
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+  border-color: var(--accent); box-shadow: none;
+}
+.field .error {
+  display: none; font-family: ui-monospace, monospace; font-size: 0.7rem;
+  color: var(--t-peach-ink); background: var(--t-peach-bg);
+  padding: 5px 8px; margin-top: 7px;
+}
+.field.invalid input, .field.invalid textarea, .field.invalid select { border-color: var(--t-peach-ink); border-width: 2px; }
+.field.invalid .error { display: block; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 560px) { .two-col { grid-template-columns: 1fr; } }
+
+.form-status {
+  font-family: ui-monospace, monospace; font-size: 0.78rem; margin-top: 14px;
+  opacity: 0; transform: translateY(6px); transition: opacity 0.3s, transform 0.3s;
+}
+.form-status.show { opacity: 1; transform: translateY(0); }
+.form-status.success {
+  color: var(--t-mint-ink); background: var(--t-mint-bg);
+  border: 2px solid var(--edge); padding: 10px 13px; display: inline-block;
+}
+.form-status.error {
+  color: var(--t-peach-ink); background: var(--t-peach-bg);
+  border: 2px solid var(--edge); padding: 10px 13px; display: inline-block;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+footer.foot { padding: 54px 0 60px; border-top: 2px solid var(--edge); }
+
+/* The page used to end on a copyright line. One more ask, for the reader
+   who scrolled past the form without stopping. */
+.foot-top {
+  display: flex; flex-wrap: wrap; justify-content: space-between;
+  align-items: flex-end; gap: 26px 40px; margin-bottom: 44px;
+}
+.foot-ask {
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(1.3rem, 2.4vw, 1.85rem); letter-spacing: -0.03em;
+  line-height: 1.1; margin: 0 0 18px; max-width: 22ch;
+}
+.btn-primary--sm { font-size: 0.84rem; padding: 13px 20px; box-shadow: var(--shadow-hard-sm); }
+.btn-primary--sm:hover { box-shadow: 2px 2px 0 var(--edge); }
+
+.foot-reach { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.foot-mail {
+  font-family: ui-monospace, monospace; font-size: 0.88rem; font-weight: 600;
+  color: var(--ink); border-bottom: 2px solid var(--pop); padding-bottom: 2px;
+}
+.foot-mail:hover { background: var(--pop); color: var(--pop-ink); border-bottom-color: var(--edge); }
+.foot-avail {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: ui-monospace, monospace; font-size: 0.68rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft);
+}
+.foot-avail .dot { width: 7px; height: 7px; background: var(--pop); outline: 1.5px solid var(--edge); }
+@media (max-width: 640px) { .foot-top { flex-direction: column; align-items: flex-start; gap: 28px; } }
+.foot-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-family: ui-monospace, monospace; font-size: 0.76rem; color: var(--ink-faint); }
+.foot-links { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.foot-links a { color: var(--ink-soft); transition: color 0.2s; padding: 6px 4px; }
+.foot-links a:hover { color: var(--accent); }
+
+/* ==========================================================
+   REASSURANCE STACK
+   The conversion point was the emptiest block on the page. This is
+   what answers "can I trust a solo contractor with real money".
+   ========================================================== */
+.next-steps { list-style: none; counter-reset: step; margin: 28px 0 0; padding: 0; }
+.next-steps li {
+  counter-increment: step; position: relative;
+  padding: 0 0 18px 44px; margin: 0;
+}
+.next-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 0;
+  width: 28px; height: 28px; display: grid; place-items: center;
+  font-family: var(--display); font-size: 0.85rem; font-weight: 800;
+  background: var(--pop); color: var(--pop-ink);
+  border: 2px solid var(--edge);
+}
+/* the run connecting the steps */
+.next-steps li:not(:last-child)::after {
+  content: ""; position: absolute; left: 13px; top: 30px; bottom: 4px;
+  width: 2px; background: var(--line-strong);
+}
+.next-steps b { display: block; font-family: var(--display); font-size: 1.05rem; font-weight: 800; letter-spacing: -0.015em; }
+.next-steps span { display: block; color: var(--ink-soft); font-size: 0.92rem; line-height: 1.6; margin-top: 2px; }
+
+.assurances { list-style: none; margin: 12px 0 0; padding: 0; }
+.assurances li {
+  position: relative; padding-left: 26px; margin-bottom: 10px;
+  font-size: 0.92rem; line-height: 1.6; color: var(--ink-soft);
+}
+.assurances li::before {
+  content: ""; position: absolute; left: 0; top: 0.52em;
+  width: 11px; height: 6px; border-left: 2.5px solid var(--ink);
+  border-bottom: 2.5px solid var(--ink); transform: rotate(-45deg);
+}
+
+.trust-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 0; }
+.trust-strip span {
+  display: flex; align-items: baseline; gap: 7px;
+  font-family: ui-monospace, monospace; font-size: 0.7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  background: var(--tint); color: var(--tint-ink);
+  border: 2px solid var(--edge); padding: 7px 11px;
+}
+.trust-strip b { font-family: var(--display); font-size: 1.15rem; font-weight: 900; letter-spacing: -0.03em; }
+
+.direct-line { margin-top: 26px; }
+
+/* Footer social marks. Icon supports the label rather than replacing it,
+   so the link still reads without colour or shape recognition. */
+.foot-links a { display: inline-flex; align-items: center; gap: 7px; }
+.foot-links .ico { display: inline-grid; place-items: center; width: 15px; height: 15px; flex-shrink: 0; }
+.foot-links .ico svg { width: 100%; height: 100%; display: block; }
+.foot-links a:hover .ico { transform: translateY(-1px); }
+.foot-links .ico { transition: transform 0.18s var(--ease-out-expo); }
+@media (prefers-reduced-motion: reduce) { .foot-links .ico { transition: none; } }
+
+/* ==========================================================
+   THE CLIPBOARD
+   The board and the clip are the physical part. The sheet stays square
+   and high-contrast: the proof card can afford a tilt because it is
+   read-only, but this is something people type into.
+   ========================================================== */
+.clipboard {
+  /* The sheet is always LIGHTER than the board. Inverting that in dark mode
+     collapsed the metaphor into a lozenge floating on a panel. */
+  --board: #26292d;
+  --paper: #fdfcf8;
+  position: relative;
+  background: linear-gradient(160deg, #34383d 0%, var(--board) 38%, #1d2023 100%);
+  border-radius: 8px;
+  padding: 58px 14px 16px;
+  box-shadow: var(--shadow-hard), 0 18px 40px -18px rgba(0,0,0,0.55);
+}
+/* the sheen down the board */
+.clipboard::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(105deg, rgba(255,255,255,0.10) 0%, transparent 26%, transparent 72%, rgba(255,255,255,0.05) 100%);
+}
+:root[data-theme="dark"] .clipboard { --board: #14171a; --paper: #24282d; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .clipboard { --board: #14171a; --paper: #24282d; }
+}
+
+.clip {
+  position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+  width: 160px; height: 64px; z-index: 3; pointer-events: none;
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,0.45));
+}
+.clip svg { width: 100%; height: 100%; display: block; }
+
+/* The sheet. Sits under the clip's jaw, which is what sells it. */
+#contact-form {
+  position: relative; z-index: 2;
+  margin-top: -14px;   /* the jaw overlaps the sheet, which is the whole trick */
+  background: var(--paper);
+  border: 0; border-radius: 2px;
+  padding: 34px 26px 26px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.30);
+}
+@media (max-width: 600px) {
+  .clipboard { padding: 48px 10px 12px; }
+  .clip { width: 128px; height: 51px; top: 10px; }
+  #contact-form { padding: 24px 18px 20px; margin-top: -11px; }
+}
+
+.form-note { color: var(--ink-soft); }
+:root[data-theme="dark"] .clipboard .field input,
+:root[data-theme="dark"] .clipboard .field select,
+:root[data-theme="dark"] .clipboard .field textarea { background: var(--bg); }
+
+/* The process promises a call; this is where someone takes it up. Still a
+   placeholder href until a real scheduling URL exists. */
+.book-link {
+  display: inline-block; margin-left: 4px;
+  font-weight: 700; color: var(--ink);
+  border-bottom: 2px solid var(--pop); padding-bottom: 1px;
+}
+.book-link:hover { background: var(--pop); color: var(--pop-ink); border-bottom-color: var(--edge); }

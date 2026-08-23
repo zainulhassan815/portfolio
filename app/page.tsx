@@ -1,19 +1,34 @@
-import { Blogs } from "@/components/sections/blogs";
-import { Contact } from "@/components/sections/contact";
-import { Hero } from "@/components/sections/hero";
-import { Projects } from "@/components/sections/projects";
-import { Testimonials } from "@/components/sections/testimonials";
-import { Tools } from "@/components/sections/tools";
+import { Header } from "@/components/site/header";
+import { Hero } from "@/components/site/hero";
+import { FeaturedWork, Services, Projects, Testimonials, Writing, Footer } from "@/components/site/sections";
+import { Contact } from "@/components/site/contact";
+import { ThemeToggle } from "@/components/site/theme-toggle";
+import { Cursor } from "@/components/site/cursor";
+import { ScrollChrome, ActiveNav, Reveal } from "@/components/site/chrome";
 
 export default function Home() {
   return (
-    <main className="mt-(--header-height) flex min-h-screen flex-col items-center justify-center space-y-8">
-      <Hero id="hero" className="scroll-mt-(--header-height)" />
-      <Projects id="projects" className="scroll-mt-(--header-height)" />
-      <Tools id="tools" className="scroll-mt-(--header-height)" />
-      <Testimonials id="testimonials" className="scroll-mt-(--header-height)" />
-      <Blogs id="blog" className="scroll-mt-(--header-height)" />
-      <Contact id="contact" className="scroll-mt-(--header-height)" />
-    </main>
+    <>
+      <a href="#main" className="skip-link">Skip to content</a>
+      <Cursor />
+      <ScrollChrome />
+      <ActiveNav />
+      <Reveal />
+      <ThemeToggle />
+
+      <Header />
+      <Hero />
+
+      <main className="wrap" id="main">
+        <FeaturedWork />
+        <Services />
+        <Projects />
+        <Testimonials />
+        <Writing />
+        <Contact />
+      </main>
+
+      <Footer />
+    </>
   );
 }

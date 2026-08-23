@@ -1,0 +1,17 @@
+/* ==========================================================
+   WRITING
+   Reuses the .work-list / .wk row from work.css so the two index
+   sections scan identically. Only the heading is local.
+   ========================================================== */
+.write-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px;
+  font-family: var(--display); font-weight: 900;
+  font-variation-settings: "wdth" 93;
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem); letter-spacing: -0.035em;
+  line-height: 0.98; text-transform: uppercase; margin: 0 0 26px;
+}
+.write-head span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem; font-weight: 400; letter-spacing: 0;
+  text-transform: none; color: var(--ink-soft);
+}

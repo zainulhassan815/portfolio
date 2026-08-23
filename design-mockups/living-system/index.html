@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Zain Ul Hassan, full-stack software engineer building web, mobile and AI products end to end." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Zain Ul Hassan &middot; Living System</title>
+
+  <!-- Archivo variable, the one network dependency. Everything still renders
+       offline on the system sans fallback in --display. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..900&display=swap" />
+
+  <!-- Load order matters: tokens first, then base, then per-section styles. -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/chrome.css" />
+  <link rel="stylesheet" href="css/cursor.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/proof-card.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/work.css" />
+  <link rel="stylesheet" href="css/testimonials.css" />
+  <link rel="stylesheet" href="css/writing.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <noscript><style>[data-reveal],.rise{opacity:1!important;transform:none!important;animation:none!important}</style></noscript>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="progress" aria-hidden="true"></div>
+  <div id="cur-ring" aria-hidden="true"><span class="label"></span></div>
+  <div id="cur-dot" aria-hidden="true"></div>
+
+  <button class="floating-toolbar theme-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+
+  <!-- Header -->
+  <header class="top" aria-label="Site">
+    <div class="wrap nav-row">
+      <a class="brand-group" href="#top">
+        <span class="brand serif" style="font-style:italic;">Zain Ul Hassan</span>
+        <span class="brand-studio">Dreamers Lab</span>
+      </a>
+      <nav class="links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#writing">Writing</a>
+      </nav>
+      <a class="nav-contact" href="#contact" data-cursor="Let's go">Start a project</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+    <a href="#work">Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#writing">Writing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="top" aria-label="Introduction">
+    <div class="wrap hero-grid">
+      <div class="hero-content">
+      <div class="status-line rise"><span class="dot"></span>AVAILABLE FOR NEW WORK</div>
+      <h1 class="rise">I build <em class="pop-mark">fullstack</em> products, end to end.</h1>
+      <p class="hero-dek rise" style="--rise-delay:0.12s">Web apps, APIs, AI features, and the payments and data behind them. For founders who need one engineer to own the whole thing.</p>
+      <div class="cta-row rise" style="--rise-delay:0.2s">
+          <a class="btn-primary" href="#contact" data-cursor="Let's go"><span>Start a project</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn-ghost" href="#work" data-cursor="Look"><span>See the work</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+
+      <div class="proof-card-wrap">
+      <div class="proof-card" role="note" aria-label="Upwork track record">
+        <span class="nail" aria-hidden="true">
+          <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 30 L15.5 19.5 L18.7 22.5 Z" fill="#cfd8dc"/>
+            <ellipse cx="17" cy="18" rx="8.6" ry="8" fill="#d32f2f" transform="rotate(-42 17 18)"/>
+            <ellipse cx="22.3" cy="11.5" rx="6.6" ry="9.2" fill="#f4433e" transform="rotate(-42 22.3 11.5)"/>
+            <ellipse cx="27" cy="7.3" rx="5.6" ry="4.3" fill="#c62828" transform="rotate(-42 27 7.3)"/>
+            <ellipse cx="26" cy="6.3" rx="4.8" ry="3.6" fill="#ff5c52" transform="rotate(-42 26 6.3)"/>
+          </svg>
+        </span>
+        <div class="proof-head">
+          <div class="proof-avatar-wrap">
+            <div class="proof-avatar">ZU</div>
+            <span class="live-dot"></span>
+          </div>
+          <div>
+            <div class="proof-name">Zain U. <span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <div class="proof-meta">Lahore, Pakistan<div class="avail">Available now</div></div>
+          </div>
+        </div>
+        <div class="proof-badges">
+          <span class="proof-badge"><span class="icon-circle"><svg viewBox="0 0 24 24" fill="none"><path d="M3 8l4 3 5-6 5 6 4-3-2 11H5L3 8z" fill="currentColor"/></svg></span>100% Job Success</span>
+          <span class="proof-badge"><span class="icon-hex">&#9733;</span>Top Rated</span>
+        </div>
+        <div class="proof-stats">
+          <div><b>$22K+</b><span>Total earnings</span></div>
+          <div><b>16</b><span>Total jobs</span></div>
+          <div><b class="tbd-stat" title="Placeholder: read total hours off the Upwork profile, the API does not expose it">1000+</b><span>Total hours</span></div>
+        </div>
+        <div class="proof-rating"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <b>5.0</b> <span class="dim">&middot; 7 reviews</span></div>
+        <a class="proof-link" href="https://upwork.com/freelancers/zainu205" target="_blank" rel="noopener" data-cursor="Verify">View full profile on Upwork &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="wrap" id="main">
+    <!-- Featured case study -->
+    <section class="block block-tint" id="work" aria-labelledby="h-work">
+      <h2 class="block-label" id="h-work" data-reveal><span class="idx">I.</span><span class="name">Featured work</span></h2>
+      <div data-reveal>
+        <div class="case-meta"><span>Web app</span><span class="sep">/</span><span>Payments &amp; booking</span><span class="sep">&middot;</span><span>Shipped, in daily use</span></div>
+        <h3 class="case-title"><a href="work/lynxsta.html">Lynxsta: a booking that is real because it is paid for.</a></h3>
+        <p class="case-lede">A booking tool for independent stylists. The stylist sends a link, the client reads the terms and pays a deposit, and the slot is theirs. Nothing is confirmed until the money moves.</p>
+
+        <a class="case-shot" href="work/lynxsta.html" data-cursor="Open">
+          <img src="assets/portfolio/lynxsta-thumb.webp" width="2000" height="1125" loading="lazy"
+               alt="Lynxsta on two phones: the stylist dashboard listing today's appointments, each marked Deposit Paid, beside the month calendar view." />
+        </a>
+
+        <div class="big-stats">
+          <div class="s"><b>4</b><span>Steps from link to confirmed</span></div>
+          <div class="s"><b>20 min</b><span>The slot is held while they pay</span></div>
+          <div class="s"><b>236</b><span>Automated tests behind it</span></div>
+        </div>
+
+        <a class="btn-primary" href="work/lynxsta.html" data-cursor="Read"><span>Read the case study</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="block" id="services" aria-labelledby="h-services">
+      <div class="block-label" data-reveal><span class="idx">II.</span><span class="name">Services</span></div>
+      <div class="svc-head" data-reveal>
+        <h2 id="h-services">What I take on</h2>
+        <p>One engineer, the whole stack.</p>
+      </div>
+
+      <div class="svc-grid" data-reveal>
+        <div class="svc t-mint">
+          <span class="svc-n">01</span>
+          <h3>Web &amp; SaaS apps</h3>
+          <p>Products built to hand over, not to keep me on retainer.</p>
+          <ul class="svc-stack"><li>Next.js</li><li>Supabase</li><li>Postgres</li><li>Stripe</li><li>TypeScript</li></ul>
+        </div>
+        <div class="svc t-lilac">
+          <span class="svc-n">02</span>
+          <h3>AI in live products</h3>
+          <p>Retrieval, assistants and extraction, layered on what already ships.</p>
+          <ul class="svc-stack"><li>FastAPI</li><li>Python</li><li>Claude</li><li>RAG</li><li>pgvector</li></ul>
+        </div>
+        <div class="svc t-sky">
+          <span class="svc-n">03</span>
+          <h3>Mobile apps</h3>
+          <p>Store-ready builds, architected to extend. Not demos.</p>
+          <ul class="svc-stack"><li>Kotlin</li><li>Compose</li><li>React Native</li><li>Flutter</li><li>Material 3</li></ul>
+        </div>
+      </div>
+
+      <div class="svc-foot" data-reveal>
+        <p class="svc-terms">Fixed price and scope in writing, after a 30 minute call.</p>
+        <a class="btn-text" href="#contact" data-cursor="Talk">Tell me what you're building <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <!-- Recent projects -->
+    <section class="block" id="projects" aria-labelledby="h-projects">
+      <h2 class="block-label" id="h-projects" data-reveal><span class="idx">III.</span><span class="name">Recent projects</span></h2>
+      <h3 class="work-subhead" data-reveal>Client work <span>Under contract, so the code is not mine to show</span></h3>
+
+      <ol class="work-list" data-reveal>
+        <li class="wk">
+          <span class="wk-yr">2026</span>
+          <span class="wk-main">
+            <span class="wk-title">LLM app taken to market</span>
+            <span class="wk-desc">Agent workflows moved from prototype into a product that shipped.</span>
+            <span class="wk-tags"><span class="tg">LLM agents</span><span class="tg">Svelte</span><span class="tg">Supabase</span><span class="tg">TypeScript</span><span class="tg">Python</span></span>
+          </span>
+        </li>
+        <li class="wk">
+          <span class="wk-yr">2026</span>
+          <span class="wk-main">
+            <span class="wk-title">Real-time data pipeline, verified and documented</span>
+            <span class="wk-desc">Establishing what the pipeline actually does, then writing it down.</span>
+            <span class="wk-tags"><span class="tg">Next.js</span><span class="tg">Prisma</span><span class="tg">Supabase</span><span class="tg">Realtime</span></span>
+          </span>
+        </li>
+        <li class="wk">
+          <span class="wk-yr">2026</span>
+          <span class="wk-main">
+            <span class="wk-title">QR peer-matching MVP with real-time sync</span>
+            <span class="wk-desc">Two devices held in step, under GDPR and safeguarding rules.</span>
+            <span class="wk-tags"><span class="tg">React</span><span class="tg">Supabase Realtime</span><span class="tg">RLS</span><span class="tg">Postgres</span></span>
+          </span>
+        </li>
+        <li class="wk">
+          <span class="wk-yr">2025-26</span>
+          <span class="wk-main">
+            <span class="wk-title">Telemedicine platform MVP</span>
+            <span class="wk-desc">Auth, doctor directory, booking flow and admin panel, end to end.</span>
+            <span class="wk-tags"><span class="tg">Next.js</span><span class="tg">Supabase</span><span class="tg">Auth</span><span class="tg">Booking</span></span>
+          </span>
+        </li>
+        <li class="wk">
+          <span class="wk-yr">2026</span>
+          <span class="wk-main">
+            <span class="wk-title">Pre-launch RLS and edge-function audit</span>
+            <span class="wk-desc">Row-level security, IDOR and webhook verification before the flag came off.</span>
+            <span class="wk-tags"><span class="tg">Supabase</span><span class="tg">RLS</span><span class="tg">Edge Functions</span><span class="tg">Stripe webhooks</span></span>
+          </span>
+        </li>
+        <li class="wk">
+          <span class="wk-yr">2026</span>
+          <span class="wk-main">
+            <span class="wk-title">Workshop booking and payments on GoHighLevel</span>
+            <span class="wk-desc">Custom objects and the LeadConnector API, no hard-coded dates or links.</span>
+            <span class="wk-tags"><span class="tg">GoHighLevel</span><span class="tg">Stripe</span><span class="tg">Bun</span><span class="tg">Webhooks</span></span>
+          </span>
+        </li>
+      </ol>
+
+      <h3 class="work-subhead" data-reveal>Open source and products <span>Public, and you can open every one</span></h3>
+
+      <ol class="work-list work-list--pub" data-reveal>
+        <li class="wk wk--pub">
+          <span class="wk-yr">AI</span>
+          <span class="wk-main">
+            <a class="wk-title" href="https://github.com/zainulhassan815/hireflow" target="_blank" rel="noopener" data-cursor="Code">Hireflow</a>
+            <span class="wk-desc">Hybrid search and reranking, with every answer cited back to its source.</span>
+            <span class="wk-tags"><span class="tg">RAG</span><span class="tg">Hybrid search</span><span class="tg">FastAPI</span><span class="tg">ChromaDB</span><span class="tg">Python</span><span class="tg tg--dest">GitHub</span></span>
+          </span>
+        </li>
+        <li class="wk wk--pub">
+          <span class="wk-yr">Product</span>
+          <span class="wk-main">
+            <a class="wk-title" href="https://chromewebstore.google.com/detail/transcript-copier-for-mic/aapgpbmldlmbkgcffjopahhcjeanpmgb" target="_blank" rel="noopener" data-cursor="Install">Teams Transcript Copier</a>
+            <span class="wk-desc">Turns Microsoft Teams chat into clean, AI-ready transcripts.</span>
+            <span class="wk-tags"><span class="tg">Chrome MV3</span><span class="tg">Vanilla JS</span><span class="tg">No dependencies</span><span class="tg tg--dest">Web Store</span></span>
+          </span>
+        </li>
+        <li class="wk wk--pub">
+          <span class="wk-yr">Automation</span>
+          <span class="wk-main">
+            <a class="wk-title" href="https://github.com/zainulhassan815/mls-bot" target="_blank" rel="noopener" data-cursor="Code">MLS lead bot</a>
+            <span class="wk-desc">Authenticated scraping of a listings portal, delivered to a CRM by webhook.</span>
+            <span class="wk-tags"><span class="tg">Selenium</span><span class="tg">Docker</span><span class="tg">Podio</span><span class="tg">Python</span><span class="tg tg--dest">GitHub</span></span>
+          </span>
+        </li>
+        <li class="wk wk--pub">
+          <span class="wk-yr">Mobile</span>
+          <span class="wk-main">
+            <a class="wk-title" href="https://github.com/zainulhassan815/newslayer" target="_blank" rel="noopener" data-cursor="Code">NewsLayer</a>
+            <span class="wk-desc">Modular news reader with offline persistence and functional error handling.</span>
+            <span class="wk-tags"><span class="tg">Kotlin</span><span class="tg">Compose</span><span class="tg">Hilt</span><span class="tg">Retrofit</span><span class="tg tg--dest">GitHub</span></span>
+          </span>
+        </li>
+      </ol>
+
+      <div class="work-out" data-reveal>
+        <a class="btn-ghost btn-ghost--sm" href="https://upwork.com/freelancers/zainu205" target="_blank" rel="noopener" data-cursor="Verify"><span>Contracts and reviews on Upwork</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn-ghost btn-ghost--sm" href="https://github.com/zainulhassan815" target="_blank" rel="noopener" data-cursor="Code"><span>Code on GitHub</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="block" id="testimonials" aria-labelledby="h-reviews">
+      <h2 class="block-label" id="h-reviews" data-reveal><span class="idx">IV.</span><span class="name">Testimonials</span></h2>
+      <div class="proof-line" data-reveal>
+        <span class="n t-mint">7<small>Reviews</small></span>
+        <span class="n t-butter">5.0<small>Average rating</small></span>
+        <span class="n t-sky">16<small>Contracts</small></span>
+        <span class="n t-lilac">0<small>Disputes</small></span>
+      </div>
+
+      <blockquote class="quote-hero" data-reveal>
+        <p>&ldquo;I&rsquo;ve hired a bunch of engineers off of Upwork over the years, and <span class="pop-mark">none of them are in his league.</span>&rdquo;</p>
+        <div class="attr">
+          <b>Verified Upwork client</b> &middot; LLM app, Supabase / Svelte / TypeScript &middot; Jan to Jul 2026 &middot; rated 5.0
+          <a class="attr-verify" href="https://upwork.com/freelancers/zainu205" target="_blank" rel="noopener" data-cursor="Verify">Read it on Upwork &rarr;</a>
+        </div>
+      </blockquote>
+
+      <div class="wall" data-reveal>
+      <div class="wall-row" tabindex="0" role="group" aria-label="Client reviews, row 1 of 2. Scrollable.">
+        <article class="wall-card">
+          <p>&ldquo;a true systems thinker… someone who sees how the whole thing fits together before he writes a line&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>Verified Upwork client</b>LLM app, Supabase / Svelte / TypeScript</div>
+          </div>
+        </article>
+        <article class="wall-card">
+          <p>&ldquo;The authentication system, doctor directory, booking flow, and admin panel were all delivered on time and exceeded my expectations.&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>Oussama G., Tunisia</b>Telemedicine platform MVP, Next.js + Supabase</div>
+          </div>
+        </article>
+        <article class="wall-card">
+          <p>&ldquo;Great experience. Very intuitive and willing to cover all bases for MVP. Will definitely recommend.&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>BuddySpark Ltd, UK</b>EdTech MVP, shipped in 6 days</div>
+          </div>
+        </article>
+        <article class="wall-card">
+          <p>&ldquo;He did an audit of our website in thorough detail and came up with strong suggestions on how to overcome them.&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>Verified Upwork client</b>Code and platform audit, EdTech</div>
+          </div>
+        </article>
+        <article class="wall-card" aria-hidden="true">
+          <p>&ldquo;a true systems thinker… someone who sees how the whole thing fits together before he writes a line&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>Verified Upwork client</b>LLM app, Supabase / Svelte / TypeScript</div>
+          </div>
+        </article>
+        <article class="wall-card" aria-hidden="true">
+          <p>&ldquo;The authentication system, doctor directory, booking flow, and admin panel were all delivered on time and exceeded my expectations.&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>Oussama G., Tunisia</b>Telemedicine platform MVP, Next.js + Supabase</div>
+          </div>
+        </article>
+        <article class="wall-card" aria-hidden="true">
+          <p>&ldquo;Great experience. Very intuitive and willing to cover all bases for MVP. Will definitely recommend.&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>BuddySpark Ltd, UK</b>EdTech MVP, shipped in 6 days</div>
+          </div>
+        </article>
+        <article class="wall-card" aria-hidden="true">
+          <p>&ldquo;He did an audit of our website in thorough detail and came up with strong suggestions on how to overcome them.&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>Verified Upwork client</b>Code and platform audit, EdTech</div>
+          </div>
+        </article>
+      </div>
+      <div class="wall-row" tabindex="0" role="group" aria-label="Client reviews, row 2 of 2. Scrollable.">
+        <article class="wall-card">
+          <p>&ldquo;He not only delivered exceptional design work, but also provided thoughtful architectural guidance which helped shape the overall product direction.&rdquo;</p>
+          <div>
+            <span class="rate verified">Verified testimonial</span>
+            <div class="attr"><b>Ekjot S., Founder &amp; CEO at StepToStem</b>Mobile app UI/UX and architecture consultation</div>
+          </div>
+        </article>
+        <article class="wall-card">
+          <p>&ldquo;Talented, prompt and result oriented consultant. I highly recommend Zain for his technical skills.&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>Verified Upwork client</b>GoHighLevel workshop booking system</div>
+          </div>
+        </article>
+        <article class="wall-card">
+          <p>&ldquo;delivered a production-ready MVP that brings together lead management, scheduling, payments, communication, and automated follow-ups&rdquo;</p>
+          <div>
+            <span class="rate verified">Verified testimonial</span>
+            <div class="attr"><b>Abu Bakar N., CRM &amp; Automations Expert</b>Business automation platform, Next.js + FastAPI + Supabase</div>
+          </div>
+        </article>
+        <article class="wall-card">
+          <p>&ldquo;Zain completed the technical test task successfully and on time. His communication was clear and professional.&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>Oussama G., Tunisia</b>Paid test task, which became the MVP contract</div>
+          </div>
+        </article>
+        <article class="wall-card" aria-hidden="true">
+          <p>&ldquo;He not only delivered exceptional design work, but also provided thoughtful architectural guidance which helped shape the overall product direction.&rdquo;</p>
+          <div>
+            <span class="rate verified">Verified testimonial</span>
+            <div class="attr"><b>Ekjot S., Founder &amp; CEO at StepToStem</b>Mobile app UI/UX and architecture consultation</div>
+          </div>
+        </article>
+        <article class="wall-card" aria-hidden="true">
+          <p>&ldquo;Talented, prompt and result oriented consultant. I highly recommend Zain for his technical skills.&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>Verified Upwork client</b>GoHighLevel workshop booking system</div>
+          </div>
+        </article>
+        <article class="wall-card" aria-hidden="true">
+          <p>&ldquo;delivered a production-ready MVP that brings together lead management, scheduling, payments, communication, and automated follow-ups&rdquo;</p>
+          <div>
+            <span class="rate verified">Verified testimonial</span>
+            <div class="attr"><b>Abu Bakar N., CRM &amp; Automations Expert</b>Business automation platform, Next.js + FastAPI + Supabase</div>
+          </div>
+        </article>
+        <article class="wall-card" aria-hidden="true">
+          <p>&ldquo;Zain completed the technical test task successfully and on time. His communication was clear and professional.&rdquo;</p>
+          <div>
+            <span class="rate"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.3 7 1-5 4.9 1.2 6.9-6.3-3.3-6.3 3.3 1.2-6.9-5-4.9 7-1z"/></svg>5</span>
+            <div class="attr"><b>Oussama G., Tunisia</b>Paid test task, which became the MVP contract</div>
+          </div>
+        </article>
+      </div>
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section class="block" id="writing" aria-labelledby="h-writing">
+      <div class="block-label" data-reveal><span class="idx">V.</span><span class="name">Writing</span></div>
+      <h2 class="write-head" id="h-writing" data-reveal>What I write about <span>Mostly architecture, and the parts that bite. All of it on Medium.</span></h2>
+
+      <ol class="work-list" data-reveal>
+        <li class="wk wk--pub">
+          <span class="wk-yr">Aug 2025</span>
+          <span class="wk-main">
+            <a class="wk-title" href="https://zainulhassan815.medium.com/how-to-design-better-ui-ux-as-an-indie-developer-4c150a06bec3" target="_blank" rel="noopener" data-cursor="Read">How to design better UI/UX as an indie developer</a>
+            <span class="wk-desc">Planning and shipping interfaces that work, without a design team.</span>
+            <span class="wk-tags"><span class="tg">UI/UX</span><span class="tg">Figma</span><span class="tg">Product</span></span>
+          </span>
+        </li>
+        <li class="wk wk--pub">
+          <span class="wk-yr">Jul 2025</span>
+          <span class="wk-main">
+            <a class="wk-title" href="https://zainulhassan815.medium.com/minimal-docker-setup-for-flask-web-scrapers-using-headless-chrome-19614fe494fe" target="_blank" rel="noopener" data-cursor="Read">Minimal Docker setup for Flask web scrapers</a>
+            <span class="wk-desc">Running headless Chrome in a container without it falling over in production.</span>
+            <span class="wk-tags"><span class="tg">Python</span><span class="tg">Docker</span><span class="tg">Headless Chrome</span></span>
+          </span>
+        </li>
+        <li class="wk wk--pub">
+          <span class="wk-yr">Apr 2025</span>
+          <span class="wk-main">
+            <a class="wk-title" href="https://zainulhassan815.medium.com/modelling-state-in-kotlin-ef131693e044" target="_blank" rel="noopener" data-cursor="Read">Modelling state in Kotlin</a>
+            <span class="wk-desc">Making every state an app can be in something the compiler knows about.</span>
+            <span class="wk-tags"><span class="tg">Kotlin</span><span class="tg">Compose</span><span class="tg">Architecture</span></span>
+          </span>
+        </li>
+        <li class="wk wk--pub">
+          <span class="wk-yr">Mar 2025</span>
+          <span class="wk-main">
+            <a class="wk-title" href="https://zainulhassan815.medium.com/formz-kotlin-a-multiplatform-form-validation-library-3af42d4f58e9" target="_blank" rel="noopener" data-cursor="Read">Formz-Kotlin: multiplatform form validation</a>
+            <span class="wk-desc">Porting Formz from Dart, and publishing it as a library.</span>
+            <span class="wk-tags"><span class="tg">Kotlin Multiplatform</span><span class="tg">Open source</span></span>
+          </span>
+        </li>
+      </ol>
+
+      <div class="work-out" data-reveal>
+        <a class="btn-ghost btn-ghost--sm" href="https://zainulhassan815.medium.com" target="_blank" rel="noopener" data-cursor="Read"><span>Everything on Medium</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="block block-tint" id="contact" aria-labelledby="h-contact">
+      <div class="block-label" data-reveal><span class="idx">VI.</span><span class="name">Start here</span></div>
+      <div class="contact-grid">
+        <div class="contact-copy" data-reveal>
+          <h2 id="h-contact">Have a project in mind?</h2>
+          <p class="copy">Tell me what you're building. I reply within one business day, and I'll say directly if it's not a fit.</p>
+
+          <ol class="next-steps">
+            <li><b>You send this form</b><span>I read it myself and reply within one business day.</span></li>
+            <li><b>We talk for 30 minutes</b><span>Your problem, not my r&eacute;sum&eacute;. No charge, no obligation. <a class="book-link tbd" href="#contact" title="Placeholder: swap for the real scheduling URL">Book a slot &rarr;</a></span></li>
+            <li><b>You get a fixed scope and price</b><span>In writing, before any work starts.</span></li>
+          </ol>
+
+          <ul class="assurances">
+            <li>NDA on request. You own the code and the accounts.</li>
+            <li>GMT+5, overlapping the US morning and the whole EU day.</li>
+            <li>Contract and escrow through Upwork.</li>
+          </ul>
+
+          <div class="trust-strip">
+            <span class="t-mint"><b>100%</b>Job success</span>
+            <span class="t-sky"><b>16</b>Contracts</span>
+            <span class="t-lilac"><b>0</b>Disputes</span>
+          </div>
+
+          <div class="direct-line">or write directly &rarr; <a href="mailto:dreamerslabdev@gmail.com">dreamerslabdev@gmail.com</a></div>
+        </div>
+        <div class="clipboard" data-reveal>
+          <span class="clip" aria-hidden="true">
+            <svg viewBox="0 0 160 64" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="plate" x1="0" y1="22" x2="0" y2="60" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#fdfefe"/><stop offset=".18" stop-color="#c9d0d7"/>
+                  <stop offset=".46" stop-color="#7e868e"/><stop offset=".72" stop-color="#b6bec6"/>
+                  <stop offset="1" stop-color="#5f676f"/>
+                </linearGradient>
+                <linearGradient id="bar" x1="0" y1="4" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#ffffff"/><stop offset=".42" stop-color="#d5dbe1"/>
+                  <stop offset=".78" stop-color="#939ba3"/><stop offset="1" stop-color="#6b737b"/>
+                </linearGradient>
+              </defs>
+              <!-- the jaw, sitting on the paper -->
+              <path d="M10 26 h140 a4 4 0 0 1 4 4 v22 a4 4 0 0 1-4 4 H10 a4 4 0 0 1-4-4 V30 a4 4 0 0 1 4-4z" fill="url(#plate)"/>
+              <path d="M6 51 h148 v1.5 a4 4 0 0 1-4 4 H10 a4 4 0 0 1-4-4z" fill="#4a525a" opacity=".55"/>
+              <!-- the sprung lever -->
+              <path d="M36 4 h88 a10 10 0 0 1 10 10 v10 a4 4 0 0 1-4 4 H30 a4 4 0 0 1-4-4 V14 a10 10 0 0 1 10-10z" fill="url(#bar)"/>
+              <rect x="42" y="9" width="76" height="3.5" rx="1.75" fill="#ffffff" opacity=".7"/>
+              <circle cx="20" cy="41" r="3.6" fill="#5c646c"/><circle cx="20" cy="41" r="1.5" fill="#8f979f"/>
+              <circle cx="140" cy="41" r="3.6" fill="#5c646c"/><circle cx="140" cy="41" r="1.5" fill="#8f979f"/>
+            </svg>
+          </span>
+        <form id="contact-form" novalidate aria-labelledby="h-contact">
+          <p class="form-note"><span class="req" aria-hidden="true">*</span> Required. Everything else helps me answer properly.</p>
+          <div class="two-col">
+            <div class="field">
+              <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" placeholder="Jordan Lee" autocomplete="name"
+                     required aria-required="true" aria-describedby="name-err" />
+              <span class="error" id="name-err">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="jordan@company.com" autocomplete="email"
+                     required aria-required="true" aria-describedby="email-err" />
+              <span class="error" id="email-err">Please enter a valid email address.</span>
+            </div>
+          </div>
+          <div class="two-col">
+            <div class="field">
+              <label for="type">Project type</label>
+              <select id="type" name="type"><option value="" selected>Select one</option><option>Web or SaaS application</option><option>AI features in an existing product</option><option>Mobile app</option><option>Audit or rescue of an existing codebase</option><option>Something else</option></select>
+            </div>
+            <div class="field">
+              <label for="budget">Budget range</label>
+              <select id="budget" name="budget"><option value="" selected>Select a range</option><option>Not sure yet</option><option>Under $5k</option><option>$5k&ndash;$15k</option><option>$15k&ndash;$40k</option><option>$40k+</option></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">What are you building? <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="4" placeholder="A quick summary of the project and roughly when you need it."
+                      required aria-required="true" aria-describedby="message-err"></textarea>
+            <span class="error" id="message-err">Please tell me about your project.</span>
+          </div>
+          <button type="submit" class="btn-primary"><span>Send it over</span><span class="arrow" aria-hidden="true">&rarr;</span></button>
+          <div class="form-status" id="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot" aria-label="Footer">
+    <div class="wrap">
+      <div class="foot-top">
+      <div class="foot-cta">
+      <p class="foot-ask">Still reading? Tell me what you&rsquo;re building.</p>
+      <a class="btn-primary btn-primary--sm" href="#contact" data-cursor="Let's go"><span>Start a project</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="foot-reach">
+      <a class="foot-mail" href="mailto:dreamerslabdev@gmail.com">dreamerslabdev@gmail.com</a>
+      <span class="foot-avail"><span class="dot" aria-hidden="true"></span>Available for new work</span>
+      </div>
+      </div>
+      <div class="foot-row">
+      <span>&copy; 2026 Zain Ul Hassan &middot; Dreamers Lab &middot; Lahore, Pakistan</span>
+      <div class="foot-links"><a href="https://upwork.com/freelancers/zainu205" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.6 5.6c-2.3 0-4 1.5-4.7 3.9-.7-1.1-1.3-2.4-1.7-3.5H9.4v5c0 1.4-.8 2.4-2 2.4s-2-1-2-2.4V6H2.7v5c0 1.5.5 2.8 1.4 3.7.9.9 2 1.3 3.3 1.3 2.7 0 4.4-2 4.4-4.9V9.5c.4.9.9 1.8 1.5 2.7l-1.3 6.2h2.8l.9-4.4c.8.5 1.8.8 2.9.8 2.7 0 4.9-2.2 4.9-5.1 0-2.8-2.2-5.1-4.9-5.1zm0 7.5c-.9 0-1.7-.4-2.4-1l.2-.9c.3-1.6 1.1-2.9 2.2-2.9 1.2 0 2.2 1 2.2 2.4 0 1.3-1 2.4-2.2 2.4z"/></svg></span>Upwork</a><a href="https://github.com/zainulhassan815" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.4C24 5.9 18.6.5 12 .5z"/></svg></span>GitHub</a><a href="https://www.linkedin.com/in/zainulhassan815" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3-1.8 0-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zm1.8 13H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 1 .8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-1-.8-1.7-1.8-1.7z"/></svg></span>LinkedIn</a><a href="mailto:dreamerslabdev@gmail.com"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="m2.5 5.5 9.5 7 9.5-7"/></svg></span>Email</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Classic scripts, not modules, so this still opens straight off disk. -->
+  <script src="js/theme.js"></script>
+  <script src="js/chrome.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/contact-form.js"></script>
+</body>
+</html>

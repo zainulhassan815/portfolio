@@ -1,0 +1,163 @@
+/* ==========================================================
+   TESTIMONIALS
+   One quote at poster scale, then a wall of the rest on a loop.
+   Every quote is a verbatim excerpt. Never stitch fragments from
+   different sentences into one, see reviews/reviews.md.
+   ========================================================== */
+
+/* --- the scoreboard --------------------------------------- */
+.proof-line {
+  display: flex; flex-wrap: wrap; gap: 0 46px; align-items: baseline;
+  margin-bottom: 54px;
+}
+.proof-line .n {
+  position: relative;
+  font-family: var(--display); font-weight: 900;
+  font-size: clamp(2.6rem, 6vw, 4.4rem); letter-spacing: -0.045em;
+  line-height: 1; font-variant-numeric: tabular-nums;
+  padding-bottom: 22px;   /* clears the label, or the rule strikes through it */
+}
+/* A tinted rule under the figure. Carries the colour without competing
+   with the numeral the way an icon would. */
+.proof-line .n::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 10px;
+  background: var(--tint, var(--pop));
+  border: 1.5px solid var(--edge);   /* the pastels alone disappeared on white */
+}
+.proof-line .n small {
+  display: block; font-family: ui-monospace, monospace;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-soft); margin-top: 10px;
+}
+
+
+/* --- the one big quote ------------------------------------ */
+.quote-hero { margin: 0 0 20px; }
+.quote-hero p {
+  font-family: var(--display); font-weight: 900;
+  font-size: clamp(2rem, 5.2vw, 4rem); letter-spacing: -0.04em;
+  line-height: 0.98; margin: 0;
+  max-width: 17ch;          /* on the <p>, where --display actually applies */
+  text-wrap: balance;
+}
+.quote-hero .attr,
+.wall-card .attr {
+  font-family: ui-monospace, monospace; font-size: 0.72rem;
+  color: var(--ink-soft); line-height: 1.6;
+}
+.quote-hero .attr { margin-top: 26px; max-width: 70ch; }
+.quote-hero .attr b { color: var(--ink); font-weight: 700; }
+
+/* --- the wall --------------------------------------------- */
+.wall {
+  position: relative; overflow: hidden;
+  margin-top: 64px; padding: 4px 0;
+  /* fade the cards out at both edges instead of cutting them */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
+}
+.wall-row {
+  display: flex; gap: 20px; width: max-content;
+  animation: wall-slide 74s linear infinite;
+}
+.wall-row + .wall-row { margin-top: 20px; animation-duration: 92s; animation-direction: reverse; }
+@keyframes wall-slide { to { transform: translateX(-50%); } }
+
+/* Hovering pauses both rows, so a quote you want to read stays put. */
+.wall:hover .wall-row,
+.wall:focus-within .wall-row { animation-play-state: paused; }
+
+.wall-card {
+  flex: 0 0 auto; width: 380px;
+  padding: 26px 26px 24px;
+  background: var(--bg-elevated);
+  border: 2px solid var(--edge);
+  box-shadow: var(--shadow-hard-sm);
+  display: flex; flex-direction: column; justify-content: space-between; gap: 22px;
+}
+.wall-card p {
+  font-family: var(--display); font-weight: 700;
+  font-size: 1.18rem; letter-spacing: -0.02em; line-height: 1.34;
+  margin: 0; text-wrap: pretty;
+}
+.wall-card .rate { margin-bottom: 12px; }
+.wall-card .attr {
+  padding-top: 14px; border-top: 1px solid var(--line);
+}
+.wall-card .attr b {
+  display: block; color: var(--ink);
+  font-family: var(--display); font-size: 0.86rem; font-weight: 800;
+  letter-spacing: -0.01em; margin-bottom: 3px;
+}
+
+/* Rating chip. Contract reviews carry stars; profile testimonials do not,
+   and inventing one for them would be a fabrication. */
+.wall-card .rate {
+  display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
+  font-family: ui-monospace, monospace; font-size: 0.7rem; font-weight: 700;
+  padding: 3px 9px 3px 7px; border: 1.5px solid var(--edge);
+  background: var(--t-mint-bg); color: var(--t-mint-ink);
+  font-size: 0.74rem;
+}
+/* One star, sized well above the label, rather than five 11px glyphs that
+   measured 2.74:1 against the mint chip. */
+.wall-card .rate .star {
+  width: 1.15em; height: 1.15em; fill: #e0a100;
+  margin-right: 1px; flex-shrink: 0;
+}
+:root[data-theme="dark"] .wall-card .rate .star { fill: #ffc233; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .wall-card .rate .star { fill: #ffc233; }
+}
+.wall-card .rate.verified { background: var(--t-sky-bg); color: var(--t-sky-ink); }
+
+@media (max-width: 700px) {
+  .wall-card { width: 300px; }
+  .proof-line { gap: 0 30px; }
+}
+
+/* Touch has no :hover and no :focus-within, so on a phone the loop could
+   not be stopped at all and the largest block of proof on the page slid
+   past mid-sentence. Coarse pointers get the same treatment as reduced
+   motion: no loop, scroll it by hand, duplicates hidden. */
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .wall { -webkit-mask-image: none; mask-image: none; }
+  .wall-row {
+    animation: none; width: auto;
+    overflow-x: auto; padding-bottom: 14px;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;      /* do not bounce the page sideways */
+    -webkit-overflow-scrolling: touch;
+  }
+  .wall-row + .wall-row { margin-top: 14px; }
+  .wall-card { scroll-snap-align: start; }
+  /* nothing is looping, so the duplicate set is just repeated content */
+  .wall-card[aria-hidden="true"] { display: none; }
+}
+
+@media (max-width: 700px) {
+  .proof-line {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 18px; margin-bottom: 40px; padding-bottom: 26px;
+  }
+  .proof-line .n { font-size: clamp(2.2rem, 11vw, 3rem); }
+  .quote-hero p { font-size: clamp(1.7rem, 8.5vw, 2.4rem); max-width: none; }
+  .wall { margin-top: 44px; }
+}
+@media (max-width: 420px) { .wall-card { width: 268px; } }
+
+/* The quote is the page's loudest claim, so the route to verifying it
+   should not be smaller than the claim. */
+.attr-verify {
+  display: inline-block; margin-left: 10px;
+  font-weight: 700; color: var(--ink);
+  border-bottom: 2px solid var(--pop); padding-bottom: 1px;
+}
+.attr-verify:hover { background: var(--pop); color: var(--pop-ink); border-bottom-color: var(--edge); }
+@media (max-width: 700px) { .attr-verify { display: block; margin: 10px 0 0; } }
+
+/* The rows are focusable so a keyboard user can reach them: on desktop that
+   pauses the loop via :focus-within, and where the loop is off it makes the
+   scroll container operable without a pointer. */
+.wall-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
