@@ -1,6 +1,6 @@
 import { Header } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
-import { FeaturedWork, Services, Projects, Testimonials, Writing, Footer } from "@/components/site/sections";
+import { FeaturedWork, Services, Projects, Testimonials, Footer } from "@/components/site/sections";
 import { Contact } from "@/components/site/contact";
 import { ThemeToggle } from "@/components/site/theme-toggle";
 import { Cursor } from "@/components/site/cursor";
@@ -24,7 +24,6 @@ export default function Home() {
         <Services />
         <Projects />
         <Testimonials />
-        <Writing />
         <Contact />
       </main>
 

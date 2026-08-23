@@ -9,32 +9,52 @@ section.block { padding: 120px 0; border-top: 1px solid var(--line); }
 section.block:first-of-type { border-top: 0; }
 
 /* ---- section grounds -------------------------------------
-   Two anchors carry weight: the showcase and the ask. The rest alternate
-   quietly so the eye gets rhythm without every section shouting. */
+   Two grounds, one hue, two values: the showcase opens deep, the ask closes
+   lit. Everything between sits on the page and is divided by the section rule
+   alone. Hierarchy comes from where the ground changes, not from alternating
+   stripes, which gave rhythm without saying which section mattered. */
 
-/* the supporting band */
-section.block-band { background: var(--band); border-top: 0; }
+/* The ask. Deep forest, fixed in both themes: the lime CTA is the brightest
+   thing in the section, which is exactly where the click belongs. */
+section.block-go {
+  background: var(--forest-ground); border-top: 0; color: var(--ink);
+  --ink: #f2f7f4; --ink-soft: #a9c4b8; --ink-faint: #86a396;
+  --line: rgba(255,255,255,0.14); --line-strong: rgba(255,255,255,0.26); --edge: #f2f7f4;
+  /* --bg-raise is the form's field fill here: a well cut into the ground, not
+     a panel raised off it. Sunk far enough that the placeholder clears 4.5:1. */
+  --bg: var(--forest-ground); --bg-raise: #06251d; --bg-elevated: #124738;
+  --accent-rgb: 134,239,172;
+}
 
-/* the conversion. Faintly warmer than the band so it does not read as
-   just another alternating stripe. */
-section.block-go { background: var(--band-go); border-top: 0; }
-
-/* The showcase. Re-declares the ink tokens rather than hardcoding colours,
-   so every child (buttons, chips, rules, shadows) adapts on its own. */
+/* The showcase. Re-declares the ink tokens rather than hardcoding colours, so
+   every child (buttons, chips, rules, shadows) adapts on its own. It needed
+   hairline edges back when the ground was a neutral near-black sitting 4% off
+   the dark page; the hue carries the edge now. */
 section.block-dark {
-  background: var(--dark-ground);
+  background: var(--forest-deep);
   border-top: 0;
   color: var(--ink);
-  --ink: #f4f4f6;
-  --ink-soft: #a9adb5;
-  --ink-faint: #838892;
+  --ink: #f2f7f4;
+  --ink-soft: #a9c4b8;
+  --ink-faint: #86a396;
   --line: rgba(255,255,255,0.13);
   --line-strong: rgba(255,255,255,0.24);
-  --edge: #f4f4f6;
-  --bg: var(--dark-ground);
-  --bg-raise: #191d22;
-  --bg-elevated: #191d22;
+  --edge: #f2f7f4;
+  --bg: var(--forest-deep);
+  --bg-raise: #10312a;
+  --bg-elevated: #10312a;
   --accent-rgb: 52,211,153;
+}
+/* Both anchors are dark grounds fixed in both themes, so they want the same
+   tints. And --accent must be re-declared, not just --accent-rgb: --accent is
+   `rgb(var(--accent-rgb))` declared on :root, so it resolves there and the
+   sections were silently rendering the page's accent instead (2.3:1 on forest
+   in light, against a 4.5:1 floor). Re-declaring it here is what makes the
+   override take. */
+section.block-dark, section.block-go {
+  --accent: rgb(var(--accent-rgb));
+  --accent-quiet: rgba(var(--accent-rgb), 0.35);
+  --accent-surface: rgba(var(--accent-rgb), 0.08);
   --t-mint-bg:#12352a; --t-mint-ink:#8fe3bb;
   --t-lilac-bg:#241d43; --t-lilac-ink:#c3b2f5;
   --t-sky-bg:#16293f; --t-sky-ink:#a3cdf2;

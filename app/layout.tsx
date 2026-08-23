@@ -16,7 +16,6 @@ import "@/styles/sections.css";
 import "@/styles/services.css";
 import "@/styles/work.css";
 import "@/styles/testimonials.css";
-import "@/styles/writing.css";
 import "@/styles/contact.css";
 
 /* Self-hosted, so there is no Google Fonts request and no FOUT. --display in

@@ -7,7 +7,6 @@ const NAV = [
   { href: "#projects", label: "Projects" },
   { href: "#services", label: "Services" },
   { href: "#testimonials", label: "Reviews" },
-  { href: "#writing", label: "Writing" },
 ];
 
 export function Header() {
@@ -55,7 +54,7 @@ export function Header() {
         id="mobile-menu"
         aria-label="Mobile"
         // Keeps the links out of the tab order while hidden.
-        {...(!open && { inert: "" as unknown as boolean })}
+        inert={!open}
       >
         {NAV.map((n) => (
           <a key={n.href} href={n.href} onClick={() => setOpen(false)}>{n.label}</a>

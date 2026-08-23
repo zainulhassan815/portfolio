@@ -1,6 +1,6 @@
 import Image from "next/image";
 import {
-  services, clientWork, publicWork, writing, reviews, heroQuote, upwork,
+  services, clientWork, publicWork, reviews, heroQuote, upwork,
   UPWORK_PROFILE, GITHUB, LINKEDIN, EMAIL,
 } from "@/lib/content";
 
@@ -70,7 +70,7 @@ export function Services() {
 
 export function Projects() {
   return (
-    <section className="block block-band" id="projects" aria-labelledby="h-projects">
+    <section className="block" id="projects" aria-labelledby="h-projects">
       <div className="wrap">
       <h2 className="block-label" id="h-projects" data-reveal><span className="idx">III.</span><span className="name">Recent projects</span></h2>
 
@@ -171,36 +171,6 @@ export function Testimonials() {
             {row.map((r) => <ReviewCard r={r} dup key={`${r.quote}-dup`} />)}
           </div>
         ))}
-      </div>
-      </div>
-    </section>
-  );
-}
-
-export function Writing() {
-  return (
-    <section className="block block-band" id="writing" aria-labelledby="h-writing">
-      <div className="wrap">
-      <div className="block-label" data-reveal><span className="idx">V.</span><span className="name">Writing</span></div>
-      <h2 className="write-head" id="h-writing" data-reveal>
-        What I write about <span>Mostly architecture, and the parts that bite. All of it on Medium.</span>
-      </h2>
-      <ol className="work-list" data-reveal>
-        {writing.map((w) => (
-          <li className="wk wk--pub" key={w.href}>
-            <span className="wk-yr">{w.date}</span>
-            <span className="wk-main">
-              <a className="wk-title" href={w.href} target="_blank" rel="noopener" data-cursor="Read">{w.title}</a>
-              <span className="wk-desc">{w.desc}</span>
-              <span className="wk-tags">{w.tags.map((t) => <span className="tg" key={t}>{t}</span>)}</span>
-            </span>
-          </li>
-        ))}
-      </ol>
-      <div className="work-out" data-reveal>
-        <a className="btn-ghost btn-ghost--sm" href="https://zainulhassan815.medium.com" target="_blank" rel="noopener" data-cursor="Read">
-          <span>Everything on Medium</span><span className="arrow" aria-hidden="true">&rarr;</span>
-        </a>
       </div>
       </div>
     </section>
