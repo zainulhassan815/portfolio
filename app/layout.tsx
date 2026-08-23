@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SITE_URL } from "@/lib/site";
 
 /* Order matters: tokens, then base, then per-section. Mirrors the <link>
    order the mockup shipped with. */
@@ -26,12 +28,11 @@ const archivo = Archivo({
   display: "swap",
 });
 
-const SITE = "https://dreamerslab.dev";
 const DESCRIPTION =
   "Zain Ul Hassan, full-stack developer. Web and SaaS products, AI features and the payments and data behind them, for founders who need one engineer to own the whole thing.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Zain Ul Hassan · Full-stack developer",
     template: "%s · Zain Ul Hassan",
@@ -40,12 +41,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Zain Ul Hassan · Full-stack developer",
     description: DESCRIPTION,
-    url: SITE,
+    url: SITE_URL,
     siteName: "Dreamers Lab",
     locale: "en_GB",
     type: "website",
   },
   twitter: { card: "summary_large_image", title: "Zain Ul Hassan · Full-stack developer", description: DESCRIPTION },
+  alternates: { canonical: "/" },
+  keywords: ["full-stack developer", "Next.js developer", "Supabase developer", "SaaS MVP", "Stripe Connect", "AI integration", "React developer"],
+  authors: [{ name: "Zain Ul Hassan", url: SITE_URL }],
+  creator: "Zain Ul Hassan",
 };
 
 export const viewport: Viewport = {
@@ -70,7 +75,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <style>{`[data-reveal],.rise{opacity:1!important;transform:none!important;animation:none!important}`}</style>
         </noscript>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
