@@ -25,7 +25,8 @@ export function Contact() {
   const err = (f: string) => state.errors?.[f];
 
   return (
-    <section className="block block-tint" id="contact" aria-labelledby="h-contact">
+    <section className="block block-go" id="contact" aria-labelledby="h-contact">
+      <div className="wrap">
       <h2 className="block-label" data-reveal><span className="idx">VI.</span><span className="name">Start here</span></h2>
       <div className="contact-grid">
         <div className="contact-copy" data-reveal>
@@ -153,6 +154,7 @@ export function Contact() {
             </div>
           </form>
         </div>
+      </div>
       </div>
     </section>
   );

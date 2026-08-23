@@ -9,7 +9,8 @@ const CASE_HREF = "/work/lynxsta";
 
 export function FeaturedWork() {
   return (
-    <section className="block block-tint" id="work" aria-labelledby="h-work">
+    <section className="block block-dark" id="work" aria-labelledby="h-work">
+      <div className="wrap">
       <h2 className="block-label" id="h-work" data-reveal><span className="idx">I.</span><span className="name">Featured work</span></h2>
       <div data-reveal>
         <div className="case-meta">
@@ -37,6 +38,7 @@ export function FeaturedWork() {
           <span>Read the case study</span><span className="arrow" aria-hidden="true">&rarr;</span>
         </a>
       </div>
+      </div>
     </section>
   );
 }
@@ -44,6 +46,7 @@ export function FeaturedWork() {
 export function Services() {
   return (
     <section className="block" id="services" aria-labelledby="h-services">
+      <div className="wrap">
       <div className="block-label" data-reveal><span className="idx">II.</span><span className="name">Services</span></div>
       <div className="svc-head" data-reveal>
         <h2 id="h-services">What I take on</h2>
@@ -60,13 +63,15 @@ export function Services() {
         ))}
       </div>
       <p className="svc-terms">Fixed price and scope in writing, after a 30 minute call.</p>
+      </div>
     </section>
   );
 }
 
 export function Projects() {
   return (
-    <section className="block" id="projects" aria-labelledby="h-projects">
+    <section className="block block-band" id="projects" aria-labelledby="h-projects">
+      <div className="wrap">
       <h2 className="block-label" id="h-projects" data-reveal><span className="idx">III.</span><span className="name">Recent projects</span></h2>
 
       <h3 className="work-subhead" data-reveal>Client work <span>Under contract, so the code is not mine to show</span></h3>
@@ -108,6 +113,7 @@ export function Projects() {
           <span>Code on GitHub</span><span className="arrow" aria-hidden="true">&rarr;</span>
         </a>
       </div>
+      </div>
     </section>
   );
 }
@@ -136,6 +142,7 @@ export function Testimonials() {
   const rows = [reviews.slice(0, 4), reviews.slice(4)];
   return (
     <section className="block" id="testimonials" aria-labelledby="h-reviews">
+      <div className="wrap">
       <h2 className="block-label" id="h-reviews" data-reveal><span className="idx">IV.</span><span className="name">Testimonials</span></h2>
 
       <div className="proof-line" data-reveal>
@@ -165,13 +172,15 @@ export function Testimonials() {
           </div>
         ))}
       </div>
+      </div>
     </section>
   );
 }
 
 export function Writing() {
   return (
-    <section className="block" id="writing" aria-labelledby="h-writing">
+    <section className="block block-band" id="writing" aria-labelledby="h-writing">
+      <div className="wrap">
       <div className="block-label" data-reveal><span className="idx">V.</span><span className="name">Writing</span></div>
       <h2 className="write-head" id="h-writing" data-reveal>
         What I write about <span>Mostly architecture, and the parts that bite. All of it on Medium.</span>
@@ -192,6 +201,7 @@ export function Writing() {
         <a className="btn-ghost btn-ghost--sm" href="https://zainulhassan815.medium.com" target="_blank" rel="noopener" data-cursor="Read">
           <span>Everything on Medium</span><span className="arrow" aria-hidden="true">&rarr;</span>
         </a>
+      </div>
       </div>
     </section>
   );

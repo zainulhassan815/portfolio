@@ -1,23 +1,70 @@
 /* ==========================================================
    CONTENT SECTIONS
    ========================================================== */
+/* Sections are full-width; each one holds its own .wrap. That replaces the
+   old `width:100vw; margin-left:calc(50% - 50vw)` full-bleed hack, which sat
+   ~8px off-centre whenever a classic scrollbar was present. */
 section.block { padding: 120px 0; border-top: 1px solid var(--line); }
-@media (max-width: 700px) { section.block { padding: 84px 0; } }
+@media (max-width: 700px) { section.block { padding: 88px 0; } }
 section.block:first-of-type { border-top: 0; }
 
-section.block-tint {
-  background: var(--bg-raise); border-top: 0; width: 100vw;
-  margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
-  padding-left: max(32px, calc(50vw - 528px));
-  padding-right: max(32px, calc(50vw - 528px));
+/* ---- section grounds -------------------------------------
+   Two anchors carry weight: the showcase and the ask. The rest alternate
+   quietly so the eye gets rhythm without every section shouting. */
+
+/* the supporting band */
+section.block-band { background: var(--band); border-top: 0; }
+
+/* the conversion. Faintly warmer than the band so it does not read as
+   just another alternating stripe. */
+section.block-go { background: var(--band-go); border-top: 0; }
+
+/* The showcase. Re-declares the ink tokens rather than hardcoding colours,
+   so every child (buttons, chips, rules, shadows) adapts on its own. */
+section.block-dark {
+  background: var(--dark-ground);
+  border-top: 0;
+  color: var(--ink);
+  --ink: #f4f4f6;
+  --ink-soft: #a9adb5;
+  --ink-faint: #838892;
+  --line: rgba(255,255,255,0.13);
+  --line-strong: rgba(255,255,255,0.24);
+  --edge: #f4f4f6;
+  --bg: var(--dark-ground);
+  --bg-raise: #191d22;
+  --bg-elevated: #191d22;
+  --accent-rgb: 52,211,153;
+  --t-mint-bg:#12352a; --t-mint-ink:#8fe3bb;
+  --t-lilac-bg:#241d43; --t-lilac-ink:#c3b2f5;
+  --t-sky-bg:#16293f; --t-sky-ink:#a3cdf2;
+  --t-peach-bg:#3b2015; --t-peach-ink:#f5b394;
+  --t-butter-bg:#35290c; --t-butter-ink:#edd07f;
+  --t-blush-bg:#3a1726; --t-blush-ink:#f2a8c4;
 }
 
 /* Some block labels are now <h2>, so the browser's default heading margin
    has to go or the section rhythm shifts. */
 h2.block-label { margin: 0 0 32px; font-weight: inherit; }
-.block-label { display: flex; align-items: baseline; gap: 12px; margin-bottom: 52px; }
-.block-label .idx { font-family: ui-serif, Georgia, serif; font-style: italic; font-size: 0.95rem; color: var(--ink-faint); }
-.block-label .name { font-family: ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+.block-label {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 52px;
+  padding-bottom: 16px; border-bottom: 2px solid var(--edge);
+}
+.block-label .idx {
+  font-family: var(--display); font-style: normal; font-weight: 900;
+  font-size: 1.05rem; letter-spacing: -0.02em; color: var(--ink);
+  background: var(--pop); color: var(--pop-ink);
+  padding: 4px 10px; border: 2px solid var(--edge);
+}
+.block-label .name {
+  font-family: ui-monospace, monospace; font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink);
+}
+@media (max-width: 700px) {
+  .block-label { margin-bottom: 40px; gap: 11px; }
+  .block-label .idx { font-size: 0.95rem; padding: 3px 8px; }
+  .block-label .name { font-size: 0.72rem; letter-spacing: 0.13em; }
+}
 
 .block h2 {
   font-family: var(--display); font-weight: 900;

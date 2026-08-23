@@ -96,9 +96,17 @@ a.case-shot:hover img { border-color: var(--accent); transform: translate(-3px, 
 /* Two groups, because "why can I click these and not those" is a question
    the reader will otherwise answer badly. */
 .work-subhead {
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px;
-  font-family: var(--display); font-size: 1.25rem; font-weight: 800;
-  letter-spacing: -0.02em; margin: 0 0 16px;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px;
+  font-family: var(--display); font-size: clamp(1.35rem, 3.4vw, 1.7rem);
+  font-weight: 900; letter-spacing: -0.028em; text-transform: uppercase;
+  margin: 0 0 18px; padding-left: 14px;
+  border-left: 6px solid var(--pop);
+  line-height: 1.05;
+}
+@media (max-width: 700px) {
+  /* On a phone these are the only thing breaking up ~2,400px of rows. */
+  .work-subhead { padding-left: 12px; border-left-width: 5px; }
+  .work-subhead span { flex: 1 0 100%; }
 }
 .work-list + .work-subhead { margin-top: 54px; }
 .work-subhead span {

@@ -19,7 +19,7 @@ export default function Home() {
       <Header />
       <Hero />
 
-      <main className="wrap" id="main">
+      <main id="main">
         <FeaturedWork />
         <Services />
         <Projects />

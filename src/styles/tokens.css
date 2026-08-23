@@ -5,6 +5,11 @@
   --bg: #ffffff;
   --bg-raise: #f7f7f5;
   --bg-elevated: #ffffff;
+  /* Section grounds. --bg-raise is only a 3% step off white, which is
+     invisible on a phone, so the bands get their own tokens. */
+  --band: #ebedef;
+  --band-go: #e6f1ea;
+  --dark-ground: #0e1114;
   --ink: #111111;
   --ink-soft: #444444;
   --ink-faint: #6b6b6b;   /* 5.3:1 on white; #777 measured 4.48:1, an AA fail */
@@ -68,6 +73,9 @@
     --t-peach-bg:  #3b2015;  --t-peach-ink:  #f5b394;
     --t-butter-bg: #35290c;  --t-butter-ink: #edd07f;
     --t-blush-bg:  #3a1726;  --t-blush-ink:  #f2a8c4;
+    --band: #131519;
+    --band-go: #0f1613;
+    --dark-ground: #16191e;
     --accent-rgb: 52,211,153;   /* #34d399, 10.3:1 on the dark ground */
     --edge: #f4f4f6;
     color-scheme: dark;
@@ -89,6 +97,9 @@
   --t-peach-bg:  #3b2015;  --t-peach-ink:  #f5b394;
   --t-butter-bg: #35290c;  --t-butter-ink: #edd07f;
   --t-blush-bg:  #3a1726;  --t-blush-ink:  #f2a8c4;
+  --band: #131519;
+  --band-go: #0f1613;
+  --dark-ground: #16191e;
   --accent-rgb: 52,211,153;
   --edge: #f4f4f6;
   color-scheme: dark;
