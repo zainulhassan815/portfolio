@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 
 const NAV = [
-  { href: "#work", label: "Work" },
   { href: "#projects", label: "Projects" },
   { href: "#services", label: "Services" },
   { href: "#testimonials", label: "Reviews" },

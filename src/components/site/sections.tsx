@@ -1,53 +1,13 @@
-import Image from "next/image";
 import {
   services, clientWork, publicWork, reviews, heroQuote, upwork,
   UPWORK_PROFILE, GITHUB, LINKEDIN, EMAIL,
 } from "@/lib/content";
 
-/* The case study page is not ported yet. Point at the route it will live on. */
-const CASE_HREF = "/work/lynxsta";
-
-export function FeaturedWork() {
-  return (
-    <section className="block block-dark" id="work" aria-labelledby="h-work">
-      <div className="wrap">
-      <h2 className="block-label" id="h-work" data-reveal><span className="idx">I.</span><span className="name">Featured work</span></h2>
-      <div data-reveal>
-        <div className="case-meta">
-          <span>Web app</span><span className="sep">/</span><span>Payments &amp; booking</span>
-          <span className="sep">&middot;</span><span>Shipped, in daily use</span>
-        </div>
-        <h3 className="case-title"><a href={CASE_HREF}>Lynxsta: a booking that is real because it is paid for.</a></h3>
-        <p className="case-lede">
-          A booking tool for independent stylists. The stylist sends a link, the client reads the
-          terms and pays a deposit, and the slot is theirs. Nothing is confirmed until the money moves.
-        </p>
-
-        <a className="case-shot" href={CASE_HREF} data-cursor="Open">
-          <Image src="/lynxsta-thumb.webp" width={2000} height={1125} priority={false}
-                 alt="Lynxsta on two phones: the stylist dashboard listing today's appointments, each marked Deposit Paid, beside the month calendar view." />
-        </a>
-
-        <div className="big-stats">
-          <div className="s"><b>4</b><span>Steps from link to confirmed</span></div>
-          <div className="s"><b>20 min</b><span>The slot is held while they pay</span></div>
-          <div className="s"><b>236</b><span>Automated tests behind it</span></div>
-        </div>
-
-        <a className="btn-primary" href={CASE_HREF} data-cursor="Read">
-          <span>Read the case study</span><span className="arrow" aria-hidden="true">&rarr;</span>
-        </a>
-      </div>
-      </div>
-    </section>
-  );
-}
-
 export function Services() {
   return (
     <section className="block" id="services" aria-labelledby="h-services">
       <div className="wrap">
-      <div className="block-label" data-reveal><span className="idx">II.</span><span className="name">Services</span></div>
+      <div className="block-label" data-reveal><span className="idx">I.</span><span className="name">Services</span></div>
       <div className="svc-head" data-reveal>
         <h2 id="h-services">What I take on</h2>
         <p>One engineer, the whole stack.</p>
@@ -72,7 +32,7 @@ export function Projects() {
   return (
     <section className="block" id="projects" aria-labelledby="h-projects">
       <div className="wrap">
-      <h2 className="block-label" id="h-projects" data-reveal><span className="idx">III.</span><span className="name">Recent projects</span></h2>
+      <h2 className="block-label" id="h-projects" data-reveal><span className="idx">II.</span><span className="name">Recent projects</span></h2>
 
       <h3 className="work-subhead" data-reveal>Client work <span>Under contract, so the code is not mine to show</span></h3>
       <ol className="work-list" data-reveal>
@@ -143,7 +103,7 @@ export function Testimonials() {
   return (
     <section className="block" id="testimonials" aria-labelledby="h-reviews">
       <div className="wrap">
-      <h2 className="block-label" id="h-reviews" data-reveal><span className="idx">IV.</span><span className="name">Testimonials</span></h2>
+      <h2 className="block-label" id="h-reviews" data-reveal><span className="idx">III.</span><span className="name">Testimonials</span></h2>
 
       <div className="proof-line" data-reveal>
         <span className="n t-mint">{upwork.reviews}<small>Reviews</small></span>

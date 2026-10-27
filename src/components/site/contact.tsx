@@ -27,7 +27,7 @@ export function Contact() {
   return (
     <section className="block block-go" id="contact" aria-labelledby="h-contact">
       <div className="wrap">
-      <h2 className="block-label" data-reveal><span className="idx">V.</span><span className="name">Start here</span></h2>
+      <h2 className="block-label" data-reveal><span className="idx">IV.</span><span className="name">Start here</span></h2>
       <div className="contact-grid">
         <div className="contact-copy" data-reveal>
           <h2 id="h-contact">Have a project in mind?</h2>

@@ -17,7 +17,7 @@ export function Hero() {
             <a className="btn-primary" href="#contact" data-cursor="Let&rsquo;s go">
               <span>Start a project</span><span className="arrow" aria-hidden="true">&rarr;</span>
             </a>
-            <a className="btn-ghost" href="#work" data-cursor="Look">
+            <a className="btn-ghost" href="#projects" data-cursor="Look">
               <span>See the work</span><span className="arrow" aria-hidden="true">&rarr;</span>
             </a>
           </div>
