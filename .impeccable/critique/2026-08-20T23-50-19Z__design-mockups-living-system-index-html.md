@@ -37,7 +37,7 @@ Re-critique of the same target after a full section-by-section revamp. Previous 
 - Detector 66 -> 147, but 98 are undersized-ui-text from ~7 declarations counted per instance; side-tab, dark-glow x2 and tight-leading x3 are false positives.
 
 ## REGRESSIONS introduced by the revamp
-1. work/lynxsta.html loads only cursor.js — no theme.js (dark preference lost on navigation, white flash) and no chrome.js (.scrolled never fires, header CTA permanently ghost).
+1. The case-study page loads only cursor.js — no theme.js (dark preference lost on navigation, white flash) and no chrome.js (.scrolled never fires, header CTA permanently ghost).
 2. <footer> inside <main> on the case page, contradicting the index fix.
 3. #contact-form panel is dead CSS: contact.css:19 sets border+shadow, contact.css:208 re-declares with border:0. Later rule wins.
 4. Recent projects section has no id, so the active-nav indicator is wrong for ~2000px.
@@ -47,9 +47,9 @@ Re-critique of the same target after a full section-by-section revamp. Previous 
 
 ## Priority Issues
 1. [P0] Form fabricates success. No action/method; prints "Message received" and resets. Worse now that noscript makes it visible without JS. Fix: form relay endpoint, or mailto with honest copy.
-2. [P1] work/lynxsta.html is a conversion dead end: no nav, no theme persistence, ghost CTA, 3700px before the only exit.
+2. [P1] The case-study page is a conversion dead end: no nav, no theme persistence, ghost CTA, 3700px before the only exit.
 3. [P1] No price anchor and no booking link despite step 2 promising a 30-minute call.
-4. [P1] h1->h3 skips twice; #testimonials has no heading at all; 3 of 13 landmarks named on index, 0 of 3 on lynxsta.
+4. [P1] h1->h3 skips twice; #testimonials has no heading at all; 3 of 13 landmarks named on index, 0 of 3 on the case page.
 5. [P2] Focus rings compute to 1px nearly everywhere (sections.css:57 declares 1.5px); .skip-link has outline:none at (0,2,0) beating a:focus-visible.
 
 ## Still outstanding from the previous run

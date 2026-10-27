@@ -116,7 +116,7 @@ one image, three numbers, and a link. Everything else belongs on the detail page
 A detail page reuses the shared CSS with `../` paths and adds `css/case.css` for
 what only it needs. `css/work.css` owns everything both pages share, so
 `case-meta`, `case-lede`, `case-cols`, `big-stats` and `shot-slot` are defined
-once. To add another, copy `work/lynxsta.html` and change the content.
+once. To add one, create a page in `work/` that loads both stylesheets.
 
 Note that `case.css` re-shows `.nav-contact` under 760px: `header.css` hides it
 there because the landing page swaps in a hamburger, and a detail page has none.
